@@ -63,6 +63,18 @@ function renderPdfPlan(){
  const m=panel("Unidade TO BE · mapa de 12 capítulos previstos");m.append(pill("PDF pp. 5–6"),para(pdfPlan.to_be_map.note));for(const [i,title] of pdfPlan.to_be_map.chapters.entries())m.append(para(String(i+1).padStart(2,"0")+" · "+title));root.append(m);
  const stages=panel("As oito etapas da aula");stages.append(pill("PDF p. 11"));for(const [i,label] of pdfPlan.lesson_stages.items.entries())stages.append(para((i+1)+". "+label));root.append(stages);
  const b=panel("Índice inicial de estruturas B2");b.append(pill("PDF p. 13"),para(pdfPlan.initial_b2_topics.note));for(const [i,title] of pdfPlan.initial_b2_topics.items.entries())b.append(para((i+1)+". "+title));root.append(b);
+ const intro=panel("O método por chunks · apresentação do PDF");
+ intro.append(pill("PDF pp. 1–2"),para(pdfPlan.introduction.method));
+ for(const [en,pt] of pdfPlan.introduction.example_family){const box=node("div",null,"tile");box.append(node("strong",en),para(pt));intro.append(box)}
+ root.append(intro);
+ const originalModules=panel("Seis opções do índice inicial");
+ originalModules.append(pill("PDF p. 12"),para(pdfPlan.program_modules.note));
+ for(const [i,label] of pdfPlan.program_modules.labels.entries())originalModules.append(para((i+1)+". "+label));
+ root.append(originalModules);
+ const modal=panel("Chunks com SHOULD · proposta do PDF");
+ modal.append(pill("PDF pp. 13–14"),para(pdfPlan.modal_should_note.explanation),para(pdfPlan.modal_can_note.explanation,"muted"));
+ for(const [situation,chunk] of pdfPlan.modal_should_examples.items){const box=node("div",null,"tile");box.append(node("strong",situation),para(chunk));modal.append(box)}
+ root.append(modal);
  const r=panel("Revisão por chunks e modalidades");r.append(pill("PDF p. 12"),para(pdfPlan.review_policy.rule),para("Card exemplar: "+pdfPlan.review_policy.front));root.append(r)
 }
 function renderReading(){
