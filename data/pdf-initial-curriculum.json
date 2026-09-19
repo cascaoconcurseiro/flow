@@ -1,0 +1,309 @@
+{
+  "source_file": "Curso de Gramática por Chunks.pdf",
+  "source_kind": "original initial planning excerpt",
+  "source_page_ranges": [
+    [
+      3,
+      6
+    ],
+    [
+      11,
+      14
+    ]
+  ],
+  "description": "Planejamento inicial descrito nas páginas 3–6 e 11–14 do PDF; distinto do currículo B2/C1 planejado posteriormente e do conteúdo das aulas.",
+  "levels": [
+    {
+      "level": "A0",
+      "title": "Fundamentos absolutos",
+      "pages": [
+        3
+      ],
+      "objective": "Aprender a montar as primeiras frases e compreender a estrutura básica do inglês.",
+      "topics": [
+        "Pronomes pessoais",
+        "TO BE",
+        "Artigos",
+        "Singular e plural",
+        "Adjetivos",
+        "Possessivos",
+        "Demonstrativos",
+        "Preposições básicas",
+        "Números",
+        "Perguntas simples"
+      ],
+      "chunks": [
+        [
+          "I'm from Brazil.",
+          "Sou do Brasil."
+        ],
+        [
+          "This is my first time.",
+          "É minha primeira vez."
+        ],
+        [
+          "What's your name?",
+          "Qual é o seu nome."
+        ],
+        [
+          "I don't understand.",
+          "Eu não entendo."
+        ]
+      ]
+    },
+    {
+      "level": "A1",
+      "title": "Construindo frases e conversas",
+      "pages": [
+        3
+      ],
+      "objective": "Falar sobre sua vida, suas necessidades, seus hábitos e seu cotidiano.",
+      "topics": [
+        "Present Simple",
+        "DO/DOES",
+        "HAVE/HAS",
+        "THERE IS/ARE",
+        "CAN",
+        "Imperativo",
+        "WH-questions",
+        "Frequência",
+        "Object pronouns",
+        "Preposições de tempo e lugar",
+        "Contáveis e incontáveis"
+      ],
+      "chunks": [
+        [
+          "I usually wake up early.",
+          "Geralmente acordo cedo."
+        ],
+        [
+          "Do you work here?",
+          "Você trabalha aqui?"
+        ],
+        [
+          "I don't have enough time.",
+          "Não tenho tempo suficiente."
+        ],
+        [
+          "How often do you exercise?",
+          "Com que frequência você se exercita?"
+        ]
+      ]
+    },
+    {
+      "level": "A2",
+      "title": "Passado, futuro e experiências",
+      "pages": [
+        3,
+        4
+      ],
+      "objective": "Narrar acontecimentos, descrever planos e começar a conectar ideias.",
+      "topics": [
+        "Past Simple",
+        "Verbos irregulares",
+        "Past Continuous",
+        "Present Continuous",
+        "WILL",
+        "GOING TO",
+        "Present Perfect introdutório",
+        "BEEN/GONE",
+        "Comparativos",
+        "Superlativos",
+        "Infinitivo e gerúndio",
+        "SHOULD",
+        "MUST",
+        "HAVE TO",
+        "Conectores"
+      ],
+      "chunks": [
+        [
+          "I went there last year.",
+          "Fui lá no ano passado."
+        ],
+        [
+          "I've never tried that before.",
+          "Nunca experimentei isso antes."
+        ],
+        [
+          "I'm going to travel next month.",
+          "Vou viajar no mês que vem."
+        ],
+        [
+          "You should give it a try.",
+          "Você deveria experimentar."
+        ]
+      ]
+    },
+    {
+      "level": "B1",
+      "title": "Fluência intermediária",
+      "pages": [
+        4
+      ],
+      "objective": "Relatar experiências, expressar opiniões, explicar decisões e participar de conversas mais longas.",
+      "topics": [
+        "Present Perfect Continuous",
+        "Past Perfect",
+        "USED TO",
+        "WOULD para hábitos passados",
+        "Condicionais zero, primeira e segunda",
+        "Voz passiva",
+        "Relative clauses",
+        "Reported speech",
+        "Modais",
+        "Verb patterns",
+        "Phrasal verbs"
+      ],
+      "chunks": [
+        [
+          "I've been working on it for weeks.",
+          "Estou trabalhando nisso há semanas."
+        ],
+        [
+          "I used to live near here.",
+          "Eu morava perto daqui."
+        ],
+        [
+          "If I had more time, I'd travel more.",
+          "Se eu tivesse mais tempo, viajaria mais."
+        ],
+        [
+          "I'm looking forward to seeing you.",
+          "Estou ansioso para te ver."
+        ]
+      ]
+    },
+    {
+      "level": "B2",
+      "title": "Autonomia e comunicação avançada",
+      "pages": [
+        4,
+        5
+      ],
+      "objective": "Expressar ideias complexas, formular hipóteses e compreender diferenças sutis de significado.",
+      "topics": [
+        "Past Perfect Continuous",
+        "Future Continuous",
+        "Future Perfect",
+        "Terceira condicional",
+        "Mixed conditionals",
+        "Modais de dedução no passado",
+        "Passive reporting",
+        "Inversões introdutórias",
+        "WISH/IF ONLY",
+        "Causative HAVE/GET",
+        "Participle clauses",
+        "Conectores avançados",
+        "Discurso indireto complexo"
+      ],
+      "chunks": [
+        [
+          "I should have told you earlier.",
+          "Eu deveria ter contado antes."
+        ],
+        [
+          "If I'd known, I would've done things differently.",
+          "Se eu soubesse, teria feito as coisas de outra maneira."
+        ],
+        [
+          "By this time next year, I'll have finished my course.",
+          "A esta altura do próximo ano, já terei concluído meu curso."
+        ]
+      ]
+    }
+  ],
+  "to_be_map": {
+    "source_pages": [
+      5,
+      6
+    ],
+    "unit": "TO BE",
+    "note": "Mapa de APRENDIZAGEM proposto, não doze aulas integralmente redigidas no PDF.",
+    "chapters": [
+      "Identificação e apresentação",
+      "Características e estados",
+      "Localização e origem",
+      "Afirmações, negações e perguntas",
+      "TO BE no passado",
+      "TO BE no futuro",
+      "Planos com GOING TO BE",
+      "Experiências com HAVE BEEN",
+      "Estados temporários com BEING",
+      "Existência com THERE BE",
+      "TO BE com outros verbos",
+      "Revisão e comunicação integrada"
+    ]
+  },
+  "lesson_stages": {
+    "source_pages": [
+      11
+    ],
+    "items": [
+      "Compreensão inicial",
+      "Chunk principal",
+      "Gramática aplicada",
+      "Família de chunks",
+      "Situações reais",
+      "Exercícios progressivos",
+      "Produção ativa",
+      "Revisão e consolidação"
+    ]
+  },
+  "initial_b2_topics": {
+    "source_pages": [
+      13
+    ],
+    "note": "Índice INICIAL do PDF, não o planejamento definitivo posterior de quarenta partes.",
+    "items": [
+      "Past Perfect Continuous",
+      "Future Perfect Continuous e usos avançados de futuro",
+      "Mixed conditionals e condicionais com UNLESS/PROVIDED",
+      "WISH, IF ONLY, WOULD RATHER e IT'S TIME",
+      "SHOULD HAVE, COULD HAVE, MIGHT HAVE e MUST HAVE",
+      "Modal perfects para arrependimento e dedução",
+      "GET/HAVE SOMETHING DONE e causative verbs",
+      "Passive reporting: IT IS SAID THAT / HE IS SAID TO",
+      "Participle clauses e redução de orações",
+      "Inversão, ênfase e cleft sentences introdutórias",
+      "Subjuntivo e estruturas formais de recomendação",
+      "Registro formal e informal, collocations e padrões avançados"
+    ]
+  },
+  "review_policy": {
+    "source_page": 12,
+    "front": "Have you ever been abroad?",
+    "rule": "Não criar um card para cada frase; selecionar estruturas úteis, sem confundir compreensão com produção espontânea."
+  },
+  "modal_should_examples": {
+    "source_pages": [
+      13,
+      14
+    ],
+    "items": [
+      [
+        "Dar um conselho",
+        "You should try it."
+      ],
+      [
+        "Pedir um conselho",
+        "What should I do?"
+      ],
+      [
+        "Negar uma recomendação",
+        "You shouldn't do that."
+      ],
+      [
+        "Falar de uma obrigação esperada",
+        "I should be there by eight."
+      ],
+      [
+        "Arrependimento passado",
+        "I should have studied more."
+      ],
+      [
+        "Perguntar sobre uma decisão passada",
+        "Should I have told her?"
+      ]
+    ]
+  }
+}
