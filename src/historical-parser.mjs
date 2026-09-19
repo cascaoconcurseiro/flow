@@ -54,6 +54,9 @@ function conditions(source){
 }
 function clean(source){
  return source
+ .replace(/<title\\b[^>]*>/g,"\\n\\n@@TITLE@@ ")
+ .replace(/<badge\\b[^>]*>/g,"\\n\\n@@BADGE@@ ")
+ .replace(/<\\/(?:title|badge)>/g,"\\n\\n")
  .replace(/<radio-group\b[^>]*>[\s\S]*?<\/radio-group>/g,"\n")
  .replace(/<button\b[^>]*>[\s\S]*?<\/button>/g,"\n")
  .replace(/<textarea\b[^>]*\/>/g,"\n")
