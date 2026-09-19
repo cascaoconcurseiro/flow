@@ -232,5 +232,66 @@
       ]
     }
   ],
-  "assessment_note": "Pontuação objetiva não representa nível CEFR certificado. Escrita livre fica salva localmente e requer análise humana ou integração futura consentida de IA."
+  "assessment_note": "Pontuação objetiva não representa nível CEFR certificado. Escrita livre fica salva localmente e requer análise humana ou integração futura consentida de IA.",
+  "transformations": [
+    {
+      "id": "tr1",
+      "prompt": "Corrija a afirmação sem inventar reserva: 'I found two hotels, so I've already booked both.'",
+      "model_answer": "I've found two suitable hotels, but I haven't booked either one.",
+      "explanation": "Encontrar opções não significa reservar. A correção usa HAVEN'T BOOKED EITHER ONE."
+    },
+    {
+      "id": "tr2",
+      "prompt": "Reformule educadamente: 'You didn't understand. The report is ready, but it hasn't been approved.'",
+      "model_answer": "Sorry, I wasn't clear. What I meant was that the draft is ready, but the final version hasn't been approved.",
+      "explanation": "A reformulação reconhece ambiguidade de READY e separa rascunho de aprovação final."
+    }
+  ],
+  "explorer": {
+    "title": "O que você precisa comunicar?",
+    "choices": [
+      {
+        "id": "problem",
+        "label": "Problema observado",
+        "english": "I'm having trouble finding my booking. Could you look into it?",
+        "translation_pt_br": "Estou tendo dificuldade para encontrar minha reserva. Você poderia investigar isso?",
+        "note": "Descreve uma dificuldade e pede investigação; não afirma que o hotel a cancelou."
+      },
+      {
+        "id": "clarify",
+        "label": "Esclarecer um termo",
+        "english": "Could you clarify what you mean by 'confirmed'?",
+        "translation_pt_br": "Você poderia esclarecer o que quer dizer com 'confirmado'?",
+        "note": "Pergunta pelo significado antes de assumir pagamento, reserva ou aprovação."
+      },
+      {
+        "id": "repair",
+        "label": "Corrigir um mal-entendido",
+        "english": "What I meant was that I'd chosen a hotel, not booked it.",
+        "translation_pt_br": "O que quis dizer é que tinha escolhido um hotel, não que o havia reservado.",
+        "note": "Separa escolha de execução e esclarece a fala anterior."
+      },
+      {
+        "id": "next",
+        "label": "Combinar próximo passo",
+        "english": "Let's compare the options before we decide.",
+        "translation_pt_br": "Vamos comparar as opções antes de decidir.",
+        "note": "Proposta de ação futura, não uma decisão concluída."
+      }
+    ]
+  },
+  "pronunciation": [
+    {
+      "phrase": "Got it.",
+      "note": "Em inglês americano coloquial, a consoante T de GOT pode soar como um toque breve semelhante a um R para ouvintes brasileiros; não muda a grafia da palavra."
+    },
+    {
+      "phrase": "What I mean is…",
+      "note": "WHAT I pode soar conectado na fala espontânea. O bloco inteiro introduz uma reformulação."
+    },
+    {
+      "phrase": "I'll get back to you.",
+      "note": "I'LL é I WILL; GET BACK TO YOU significa responder depois, não necessariamente retornar fisicamente."
+    }
+  ]
 }
