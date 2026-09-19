@@ -37,7 +37,7 @@ const pdf=read("data/pdf-a0-aula-01.json"),plan=read("data/pdf-initial-curriculu
 assert(pdf.id==="PDF-A0-U01-A01"&&pdf.level==="A0"&&pdf.source_status==="pdf_original_example_with_new_interactions","Aula PDF deve preservar o estado de EXEMPLO A0, não A1 original completo");
 assert(pdf.source.total_pages===526&&pdf.source.lesson_pages.join(",")==="6,7,8,9,10","Proveniência do PDF inválida");
 assert(pdf.sourceSections.length===5&&pdf.sourceSections.every((s,i)=>s.page===i+6&&s.lines.length>0),"Transcrição das cinco páginas da aula ausente");
-assert(pdf.sourceSections[0].lines.includes("A0 • Unidade 01 • Aula 01")&&pdf.sourceSections[0].lines.includes("I'm from Brazil."),"Início real da aula não preservado");
+assert(pdf.sourceSections[0].heading==="A0 • Unidade 01 • Aula 01"&&pdf.sourceSections[0].lines.includes("I'm from Brazil."),"Início real da aula não preservado");
 assert(pdf.sourceSections.some(s=>s.lines.includes("Yes, I am. / No, I'm not.")),"Respostas curtas originais ausentes");
 assert(pdf.reading.translation_policy==="after_comprehension_submission"&&pdf.reading.questions.length===4,"Interação de compreensão PDF inválida");
 assert(new Set(pdf.reading.questions.map(q=>q.options.findIndex(o=>o.id===q.correct_option_id))).size>1,"Alternativas PDF não distribuem posições de gabarito");
