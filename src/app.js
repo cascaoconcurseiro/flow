@@ -1,3 +1,4 @@
+import {mountHistoricalLesson} from "./historical-view.mjs";
 import {mountArchive} from "./archive-browser.mjs";
 import {renderHistoricalLessonPage} from "./historical-page.mjs";
 const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json",sourceIndex:"./data/recovered-source-index.json",masterPrompt:"./curriculum/prompt_mestre_professor_interativo.md"};
@@ -169,7 +170,7 @@ p.append(para(route==="pdf-lesson"?"O PDF apresenta esta Aula 01 como exemplo in
 p.append(button("Reiniciar somente o progresso desta aula",()=>{if(confirm("Apagar respostas e avaliações locais apenas desta aula?")){progress=emptyProgress();cardIndex=0;save();render()}},"btn small"));root.append(p)}
 function renderHistoricalLesson(){
  if(!currentHistoricalLesson)return gotoCatalog(level);
- renderHistoricalLessonPage(root,currentHistoricalLesson,()=>gotoCatalog(currentHistoricalLesson.level));
+ mountHistoricalLesson(root,currentHistoricalLesson,()=>gotoCatalog(currentHistoricalLesson.level));
 }
 function renderMasterPrompt(){
  const p=panel("Prompt Mestre de Autoria — Professor Interativo");
