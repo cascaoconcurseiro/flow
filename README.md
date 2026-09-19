@@ -54,6 +54,11 @@ npm test
    node scripts/import-chatgpt-export.mjs --source /caminho/conversations.json --ids-file .private/selected-ids.txt
    ```
 5. O resultado fica em `.private/real-english-archive/` (ignorado pelo Git), com uma cópia integral em JSON de cada conversa escolhida e `manifest.json` com hashes e contagens. Isso **não** garante recuperar estados efêmeros de widgets, anexos nem aulas que não constem da exportação. Confirme as fontes originais por aula e por versão.
+6. Gere um **índice privado completo de mensagens e todas as ramificações**, preservando o nó original integral e a fonte de cada mensagem:
+   ```sh
+   node scripts/index-private-archive.mjs
+   ```
+   O arquivo `.private/real-english-archive/normalized-message-index.json` contém todos os nós presentes nas conversas selecionadas, com IDs, pais, filhos, texto para busca e estrutura original. **É um arquivo histórico privado, não uma aula pronta nem um arquivo para publicar**. O programa recusa sobrescrever o índice existente.
 
 > Uma obra adicional encontrada na Biblioteca do usuário, “Gramática Completa de Inglês — A0–B2”, pode ser catalogada como **fonte suplementar distinta**; ela não deve substituir silenciosamente o histórico do curso interativo A1–C1. Não adicione sua cópia à branch pública sem revisão de conteúdo e autorização adequada.
 
