@@ -11,7 +11,7 @@ const conversation={
   root:{id:"root",parent:null,children:["assistant1","alternative"],message:{author:{role:"user"},create_time:1,content:{parts:["Continuar a aula."]}}},
   assistant1:{id:"assistant1",parent:"root",children:["assistant2"],message:{author:{role:"assistant"},create_time:2,content:{parts:["<button onClick={...}>Revelar</button> <radio-group><radio value=\"a\">A</radio></radio-group> {@body ...}"]}}},
   assistant2:{id:"assistant2",parent:"assistant1",children:[],message:{author:{role:"assistant"},create_time:3,content:{parts:["GenUI.issueNewTurn('corrigir'); <WritingBlock>escreva</WritingBlock>"]}}},
-  alternative:{id:"alternative",parent:"root",children:[],message:{author:{role:"assistant"},create_time:2.5,content:{parts:[{text:"<checkbox>opção</checkbox>"}]}}
+  alternative:{id:"alternative",parent:"root",children:[],message:{author:{role:"assistant"},create_time:2.5,content:{parts:[{text:"<checkbox>opção</checkbox>"}]}}}
  }
 };
 test("normaliza formato do ChatGPT sem modificar conteúdo",()=>{
