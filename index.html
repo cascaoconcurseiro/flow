@@ -3,51 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>REAL ENGLISH — Currículo A1–C1</title>
-<style>
-:root{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17253a;background:#f3f6fa}
-*{box-sizing:border-box}body{margin:0}header{background:#14283c;color:#fff;padding:2.2rem max(1.1rem,calc((100vw - 1050px)/2))}header h1{margin:0;font-size:clamp(1.7rem,4vw,2.5rem)}header p{max-width:760px;color:#d5e8ff;line-height:1.6}main{max-width:1050px;margin:auto;padding:1.2rem}
-.summary,.module,.lesson,.notice{background:white;border:1px solid #dbe2ea;border-radius:13px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17253a06}.notice{border-left:5px solid #986f19}.levels{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
-button{cursor:pointer;border:1px solid #b9c6d6;border-radius:9px;background:white;padding:.65rem 1rem;font:inherit;color:#14283c}
-button[aria-pressed=true]{background:#14283c;color:white}
-button:focus-visible,summary:focus-visible{outline:3px solid #216ecc;outline-offset:3px}
-h2{margin:.2rem 0}.meta{font-size:.88rem;color:#4a5970}.pill{display:inline-block;border-radius:999px;background:#eaf0f6;padding:.25rem .55rem;font-size:.79rem;color:#29445f}.lesson{box-shadow:none;background:#f8fafc}.lesson h3{font-size:1rem;margin:.2rem 0}.module summary{cursor:pointer;font-weight:700;padding:.35rem}a{color:#125799}
-footer{padding:1rem 0 2rem;color:#4a5970;font-size:.9rem}
-</style>
+<meta name="theme-color" content="#14283c">
+<title>REAL ENGLISH | Grammar Through Chunks</title>
+<link rel="stylesheet" href="./src/styles.css">
+<script type="module" src="./src/app.js"></script>
 </head>
 <body>
-<header>
-<h1>REAL ENGLISH</h1>
-<p>Grammar Through Chunks · Mapa curricular do A1 ao C1. Planejamento, aulas históricas e conteúdo efetivamente importado são estados diferentes: esta página não simula aulas ainda não recuperadas.</p>
-</header>
-<main>
-<div class="notice"><strong>Aviso de integridade:</strong> o arquivo JSON é um catálogo, não a exportação das aulas. A1/A2 dependem da recuperação das fontes originais. O plano de B2/C1 ainda não é conteúdo de aula publicado.</div>
-<div class="levels" id="levels" role="group" aria-label="Selecionar nível"></div>
-<section id="course" aria-live="polite"><p>Carregando catálogo curricular…</p></section>
-<footer>Conteúdo público: apenas metadados e planejamento. Não inserir aqui exportação completa do ChatGPT ou respostas pessoais. <a href="./curriculum/real_english_curriculum.json">Ver JSON curricular</a> · <a href="./curriculum/real_english_system_prompt.md">Ver contrato pedagógico</a>.</footer>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<header class="hero"><div class="shell">
+<p class="overline">REAL ENGLISH · GRAMMAR THROUGH CHUNKS</p>
+<h1>Seu inglês, uma aula de cada vez.</h1>
+<p class="hero-copy">Percurso A1–C1 · compreensão primeiro · prática interativa · revisão direcionada.</p>
+<div class="hero-pills"><span>5 níveis catalogados</span><span>Exercícios e cards funcionais no piloto</span><span>Histórico original preservado separadamente</span></div>
+</div></header>
+<div class="shell layout">
+<aside class="sidebar" aria-label="Navegação do curso">
+<h2>Seu percurso</h2><div id="level-nav" class="level-nav"></div>
+<div class="aside-note"><strong>Integridade do conteúdo</strong><p>Uma aula planejada não é uma aula publicada. Os materiais A1–B1 originais ainda precisam de importação e auditoria.</p></div>
+</aside>
+<main id="main" tabindex="-1">
+<div id="announcements" role="status" aria-live="polite"></div>
+<div id="view"><p>Carregando currículo…</p></div>
 </main>
-<script>
-(async()=>{
-const host=document.getElementById('course'),nav=document.getElementById('levels');
-const node=(tag,text,className)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(className)el.className=className;return el;};
-try{
-const response=await fetch('./curriculum/real_english_curriculum.json');
-if(!response.ok)throw new Error('HTTP '+response.status);
-const data=await response.json();
-function display(volume){
-host.replaceChildren();
-nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.textContent===volume.level)));
-const head=node('div',undefined,'summary');
-head.append(node('h2',volume.level+' · Volume '+volume.volume+' — '+volume.title),node('p',volume.notes||'', 'meta'));
-head.append(node('span',volume.planned_lesson_count===null?'Contagem original ainda não verificada':volume.planned_lesson_count+' posições catalogadas','pill'));
-host.append(head);
-if(volume.lesson_records.length){const section=node('section');section.append(node('h2','Partes do volume'));for(const l of volume.lesson_records){const item=node('article',undefined,'lesson');item.append(node('h3',l.number+' · '+(l.title||'Título original ainda não recuperado')),node('span',l.status,'pill'));section.append(item);}host.append(section);}
-for(const m of volume.modules){const details=node('details',undefined,'module');const title=node('summary',m.number+' · '+m.title+' ('+m.lessons.length+' partes)');details.append(title);for(const l of m.lessons){const item=node('article',undefined,'lesson');item.append(node('h3',l.number+' · '+l.title),node('p',l.objective,'meta'),node('span',l.status,'pill'));details.append(item);}host.append(details);}
-if(volume.lesson_records.length===0&&volume.modules.length===0){const p=node('p','As aulas e a contagem histórica deste volume ainda precisam ser recuperadas da exportação original. Nenhum título foi inventado.');host.append(p);}
-}
-for(const vol of data.volumes){const b=node('button',vol.level);b.type='button';b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>display(vol));nav.append(b);}display(data.volumes[0]);
-}catch(error){host.replaceChildren(node('p','Não foi possível carregar o catálogo. Abra esta página por um servidor local ou pelo GitHub Pages depois de habilitado; o arquivo JSON precisa estar no mesmo diretório do site. Detalhe: '+error.message));}
-})();
-</script>
+</div>
+<footer class="shell footer">Protótipo técnico local: o progresso de demonstração fica somente neste navegador. Ainda não há conta, banco de dados, sincronização ou correção por IA. <a href="./curriculum/real_english_curriculum.json">Catálogo JSON</a> · <a href="./curriculum/real_english_system_prompt.md">Contrato pedagógico</a> · <a href="./AUDIT_REAL_ENGLISH.md">Auditoria</a>.</footer>
 </body></html>
