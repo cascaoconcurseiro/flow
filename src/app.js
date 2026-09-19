@@ -1,15 +1,17 @@
 import {mountArchive} from "./archive-browser.mjs";
-const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json"};
+const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json"};
 const STORE_KEY="real-english-technical-demo-v1";
 const root=document.getElementById("view");
 const nav=document.getElementById("level-nav");
 const status=document.getElementById("announcements");
+document.getElementById("open-pdf-lesson").addEventListener("click",gotoPdfLesson);
+document.getElementById("open-pdf-plan").addEventListener("click",()=>{route="pdf-plan";render();document.getElementById("main").focus()});
 document.getElementById("open-private-archive").addEventListener("click",()=>{route="archive";render();document.getElementById("main").focus()});
-let curriculum=null,demo=null,level="A1",route="catalog",cardIndex=0;
+let curriculum=null,demo=null,originalDemo=null,pdfLesson=null,pdfPlan=null,level="A1",route="catalog",cardIndex=0,activeStoreKey=STORE_KEY;
 const emptyProgress=()=>({answers:{},checked:false,translation:false,grades:{},cardBack:false,dialogueIndex:0,dialogueHistory:[],writing:{},checks:{},transformations:{},shownModels:{},explorerChoice:"problem",explorerTranslation:false});
 let progress=loadProgress();
-function loadProgress(){try{return {...emptyProgress(),...JSON.parse(localStorage.getItem(STORE_KEY)||"{}")}}catch{return emptyProgress()}}
-function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify(progress))}catch{announce("Não foi possível salvar o progresso neste navegador.")}}
+function loadProgress(){try{return {...emptyProgress(),...JSON.parse(localStorage.getItem(activeStoreKey)||"{}")}}catch{return emptyProgress()}}
+function save(){try{localStorage.setItem(activeStoreKey,JSON.stringify(progress))}catch{announce("Não foi possível salvar o progresso neste navegador.")}}
 function announce(message){status.textContent=message}
 function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined&&text!==null)n.textContent=String(text);if(cls)n.className=cls;return n}
 function add(parent,...children){for(const x of children){if(x)parent.append(x)}return parent}
@@ -19,10 +21,11 @@ function pill(text,cls=""){return node("span",text,"pill "+cls)}
 function para(text,cls=""){return node("p",text,cls)}
 function divider(){return node("hr",null,"divider")}
 function toolbar(...nodes){return add(node("div",null,"toolbar"),...nodes)}
-function gotoDemo(){route="demo";cardIndex=0;render();document.getElementById("main").focus()}
+function gotoDemo(){demo=originalDemo;activeStoreKey=STORE_KEY;progress=loadProgress();route="demo";cardIndex=0;render();document.getElementById("main").focus()}
+function gotoPdfLesson(){demo=pdfLesson;activeStoreKey="real-english-pdf-a0-aula-01-v1";progress=loadProgress();route="pdf-lesson";cardIndex=0;render();document.getElementById("main").focus()}
 function gotoCatalog(next){level=next;route="catalog";render();document.getElementById("main").focus()}
 function renderNav(){nav.replaceChildren();for(const v of curriculum.volumes){const b=button(v.level,()=>gotoCatalog(v.level));b.setAttribute("aria-current",String(v.level===level));nav.append(b)}}
-function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="demo")renderDemo();else renderCatalog()}
+function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="pdf-plan")renderPdfPlan();else if(route==="demo"||route==="pdf-lesson")renderDemo();else renderCatalog()}
 function renderCatalog(){
 const v=curriculum.volumes.find(x=>x.level===level);const overview=panel(level+" · "+v.title);
 const count=v.planned_lesson_count===null?"Quantidade original ainda não recuperada":v.planned_lesson_count+" posições no catálogo";
@@ -34,9 +37,33 @@ if(v.lesson_records.length){const p=panel("Aulas catalogadas");for(const l of v.
 for(const m of v.modules){const d=node("details",null,"module");d.append(node("summary",m.number+" · "+m.title+" · "+m.lessons.length+" partes"));const body=node("div",null,"module-body");for(const l of m.lessons){const row=node("div",null,"lesson-row"),left=node("div");left.append(node("strong",String(l.number).padStart(2,"0")+" · "+l.title),para(l.objective,"muted"));row.append(left,pill("Planejada; ainda não redigida","warning"));body.append(row)}d.append(body);root.append(d)}
 }
 function renderDemo(){
-const heading=panel(demo.title);heading.append(pill("PILOTO · NÃO É O ORIGINAL","warning"),para(demo.subtitle),toolbar(button("← Voltar ao currículo",()=>gotoCatalog("B1"))));root.append(heading);
+const heading=panel(demo.title);heading.append(pill(route==="pdf-lesson"?"EXEMPLO ORIGINAL DO PDF · ATIVIDADES NOVAS":"PILOTO · NÃO É O ORIGINAL",route==="pdf-lesson"?"good":"warning"),para(demo.subtitle),toolbar(button("← Voltar ao currículo",()=>gotoCatalog(route==="pdf-lesson"?"A1":"B1"))));root.append(heading);
 const intro=panel("Objetivos");for(const objective of demo.objectives)intro.append(para("• "+objective));root.append(intro);
-renderReading();renderExplanation();renderTransformations();renderExplorer();renderCards();renderDialogue();renderWriting();renderPronunciation();renderReview();
+renderReading();renderExplanation();renderTransformations();renderExplorer();renderCards();renderDialogue();renderWriting();renderPronunciation();renderReview();if(route==="pdf-lesson")renderPdfOriginal();
+}
+function renderPdfOriginal(){
+ const p=panel("Texto de referência · páginas 6–10 do PDF");
+ if(!progress.checked){p.append(para("Após corrigir as questões da Parte 1, você poderá consultar a transcrição das seções originais do PDF, incluindo as traduções. Ela é apresentada separadamente das novas atividades criadas para esta versão web.","notice"));root.append(p);return}
+ p.append(para("Estas seções transcrevem os exemplos e as explicações da aula demonstrativa do PDF. Exercícios, opções e diálogo adicionados ao app NÃO constam do original; confira a página indicada para cada seção.","notice"));
+ for(const section of demo.sourceSections){
+  const details=node("details",null,"module");details.append(node("summary","Página "+section.page+" — "+section.heading));
+  const body=node("div",null,"module-body");body.append(para(section.lines.join("\n"),"reading"));details.append(body);p.append(details)
+ }
+ root.append(p)
+}
+function renderPdfPlan(){
+ const p=panel("Planejamento inicial encontrado no PDF");
+ p.append(pill("FONTE: PDF pp. 3–6 e 11–14"),para("Este planejamento original A0–B2 é uma proposta inicial, não o índice completo das aulas já redigidas. B2/C1 possuem planejamentos posteriores separados no catálogo atual.","notice"));
+ p.append(toolbar(button("Abrir Aula 01 (PDF)",gotoPdfLesson,"btn primary"),button("← Voltar ao currículo",()=>gotoCatalog("A1"))));root.append(p);
+ for(const level of pdfPlan.levels){
+  const part=panel(level.level+" · "+level.title);part.append(pill("Páginas "+level.pages.join(", ")),para(level.objective),node("h3","Conteúdos previstos"),para(level.topics.join(" · "),"muted"),node("h3","Chunks documentados no PDF"));
+  for(const chunk of level.chunks){const tile=node("div",null,"tile");tile.append(node("strong",chunk[0]),para(chunk[1]));part.append(tile)}
+  root.append(part)
+ }
+ const m=panel("Unidade TO BE · mapa de 12 capítulos previstos");m.append(pill("PDF pp. 5–6"),para(pdfPlan.to_be_map.note));for(const [i,title] of pdfPlan.to_be_map.chapters.entries())m.append(para(String(i+1).padStart(2,"0")+" · "+title));root.append(m);
+ const stages=panel("As oito etapas da aula");stages.append(pill("PDF p. 11"));for(const [i,label] of pdfPlan.lesson_stages.items.entries())stages.append(para((i+1)+". "+label));root.append(stages);
+ const b=panel("Índice inicial de estruturas B2");b.append(pill("PDF p. 13"),para(pdfPlan.initial_b2_topics.note));for(const [i,title] of pdfPlan.initial_b2_topics.items.entries())b.append(para((i+1)+". "+title));root.append(b);
+ const r=panel("Revisão por chunks e modalidades");r.append(pill("PDF p. 12"),para(pdfPlan.review_policy.rule),para("Card exemplar: "+pdfPlan.review_policy.front));root.append(r)
 }
 function renderReading(){
 const r=demo.reading,p=panel("1 · Reading first: "+r.title);
@@ -103,6 +130,6 @@ const p=panel("9 · Autoavaliação e revisão direcionada");
 for(const [i,goal] of demo.objectives.entries()){const lab=node("label",null,"option"),c=node("input");c.type="checkbox";c.checked=!!progress.checks[i];c.addEventListener("change",()=>{progress.checks[i]=c.checked;save()});lab.append(c,node("span",goal));p.append(lab)}
 const misses=demo.reading.questions.filter(q=>progress.checked&&progress.answers[q.id]!==q.correct_option_id).map(q=>q.explanation);
 if(progress.checked)p.append(para(misses.length?"Revise estes contrastes: "+misses.join(" "):"Questões de leitura corretas. Confirme a habilidade na escrita independente.","muted"));
-p.append(para("Concluir a demonstração não significa concluir a aula original, o volume B1 ou uma certificação CEFR.","subtle muted"));
-p.append(button("Reiniciar somente o progresso da demonstração",()=>{if(confirm("Apagar respostas e avaliações locais apenas desta demonstração?")){progress=emptyProgress();cardIndex=0;save();render()}},"btn small"));root.append(p)}
-(async()=>{try{const [c,l]=await Promise.all([fetch(PATHS.curriculum),fetch(PATHS.demo)]);if(!c.ok||!l.ok)throw new Error("Falha ao carregar os arquivos JSON");curriculum=await c.json();demo=await l.json();render()}catch(e){root.replaceChildren(add(panel("Não foi possível carregar o curso"),para(e.message),para("Sirva a pasta por um servidor local (por exemplo: npm run dev). Abrir index.html diretamente como arquivo pode bloquear a leitura dos JSON.")))}})();
+p.append(para(route==="pdf-lesson"?"O PDF apresenta esta Aula 01 como exemplo inicial do nível A0. Os exercícios criados para o site não são os exercícios originais; concluí-los não certifica proficiência.":"Concluir a demonstração não significa concluir a aula original, o volume B1 ou uma certificação CEFR.","subtle muted"));
+p.append(button("Reiniciar somente o progresso desta aula",()=>{if(confirm("Apagar respostas e avaliações locais apenas desta aula?")){progress=emptyProgress();cardIndex=0;save();render()}},"btn small"));root.append(p)}
+(async()=>{try{const [c,l,p,s]=await Promise.all([fetch(PATHS.curriculum),fetch(PATHS.demo),fetch(PATHS.pdfLesson),fetch(PATHS.pdfPlan)]);if(!c.ok||!l.ok||!p.ok||!s.ok)throw new Error("Falha ao carregar os arquivos JSON");curriculum=await c.json();originalDemo=await l.json();pdfLesson=await p.json();pdfPlan=await s.json();demo=originalDemo;render()}catch(e){root.replaceChildren(add(panel("Não foi possível carregar o curso"),para(e.message),para("Sirva a pasta por um servidor local (por exemplo: npm run dev). Abrir index.html diretamente como arquivo pode bloquear a leitura dos JSON.")))}})();
