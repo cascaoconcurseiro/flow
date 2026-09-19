@@ -6,7 +6,7 @@ Leia este arquivo antes de trabalhar neste repositório. A especificação princ
 Transformar o histórico original A1–B1, os planejamentos B2/C1 e as funcionalidades pedagógicas criadas nas conversas do REAL ENGLISH — Grammar Through Chunks em um sistema de estudo auditável. **Não reconstruir o currículo original a partir de suposições nem substituir aulas originais por amostras geradas.**
 
 ## Estado real desta branch
-Esta branch contém um protótipo estático funcional e **uma aula demonstrativa criada para testar componentes**, identificada por `DEMO-`. Não contém aulas históricas completas, banco de dados, login, serviço de IA ou hospedagem. O GitHub fornecido inicialmente tinha apenas README; o app anterior informado pelo usuário não foi localizado neste repositório.
+Esta branch contém um protótipo estático funcional, um leitor local de conversas exportadas e **uma aula demonstrativa criada para testar componentes**, identificada por `DEMO-`. Não contém aulas históricas completas, banco de dados, login, serviço de IA ou hospedagem. O GitHub fornecido inicialmente tinha apenas README; o app anterior informado pelo usuário não foi localizado neste repositório.
 
 ## Antes de alterar o código
 1. Ler o README, o catálogo, o prompt completo, `AUDIT_REAL_ENGLISH.md` e o contrato de atividades presente em `data/demo-lesson.json`.
@@ -15,7 +15,7 @@ Esta branch contém um protótipo estático funcional e **uma aula demonstrativa
 4. Trabalhar na branch apropriada e entregar mudanças revisáveis. Não fazer merge, deploy nem ampliar visibilidade sem instrução explícita.
 
 ## Preservação
-- ZIP de exportação e `conversations.json` ficam privados, fora do GitHub público. Arquivo original intacto com hash SHA-256. O importador só arquiva IDs selecionados.
+- ZIP de exportação e `conversations.json` ficam privados, fora do GitHub público. Arquivo original intacto com hash SHA-256. O importador só arquiva IDs selecionados. O leitor `src/archive-browser.mjs` lê o arquivo escolhido no navegador, sem persistir o histórico em `localStorage` ou enviá-lo por rede; ele não reconstitui widgets automaticamente.
 - Extrair integralmente conversas e versões; preservar texto, ordem, tradução, alternativas e IDs, gabarito, feedback, código original dos controles, diálogos, cartões, tarefas de escrita, critérios e notas.
 - Separar *fonte histórica imutável* de *conteúdo normalizado para o app*. Não apagar variantes antigas só porque a UI mostra outra versão.
 - Estado de clique/seleção no ChatGPT pode não constar do arquivo exportado; registrar como indisponível, não criar dados fictícios do aluno.
