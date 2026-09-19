@@ -4,7 +4,7 @@ const cleanInline=s=>String(s||"").replace(/<[^>]*>/g,"").replace(/\*\*(.*?)\*\*
 function extractQuestions(raw){
  const out=[],pattern=/<radio-group\b[\s\S]*?<\/radio-group\s*>/gi;
  for(const m of raw.matchAll(pattern)){
-  const options=[...m[0].matchAll(/<radio\b([^>]*)>([\s\S]*?)<\/radio\s*>/gi)]
+  const options=[...m[0].matchAll(/<radio(?=[\s>])([^>]*)>([\s\S]*?)<\/radio\s*>/gi)]
     .map(x=>({id:x[1].match(sourceAttr)?.[1]??"",text:cleanInline(x[2])})).filter(x=>x.id&&x.text);
   if(options.length<2)continue;
   const prior=raw.slice(Math.max(0,m.index-850),m.index);
