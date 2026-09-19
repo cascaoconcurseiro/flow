@@ -69,3 +69,22 @@ B1: as partes 30–33 foram redigidas no chat atual, porém **não foram extraí
 O repositório é **público**. NÃO enviar ZIP integral de exportação do ChatGPT, dados pessoais, respostas privadas de alunos, senhas ou anexos não autorizados. A primeira providência é recuperar as fontes e identificar o repositório/código real do aplicativo existente; em seguida, criar manifesto completo privado e uma aula-piloto, preservando esta branch apenas para planejamento público.
 
 **Estado do PR #1:** rascunho; não fazer merge nem publicar como app concluído.
+
+
+## 8. Segunda passagem — protótipo técnico implementado na branch
+
+Após a auditoria inicial, foi criado **código novo de demonstração**, separado do acervo histórico:
+
+| Item implementado | Escopo comprovável no código |
+|---|---|
+| `index.html`, `src/app.js`, `src/styles.css` | UI responsiva com navegação A1–C1 e abertura de **um piloto técnico** no B1. |
+| `data/demo-lesson.json` | Um texto fictício e tradução revelável após correção, 4 questões com gabaritos/feedback, 4 chunks/cards, 3 turnos de diálogo e 2 tarefas de escrita. **Não é a aula original completa B1 Parte 32.** |
+| `localStorage` | Guarda respostas, revisão de cards, histórico de demonstração e rascunhos neste navegador. Não é login, sincronização, backup nem armazenamento seguro multiusuário. |
+| Exportação de respostas do piloto | Salva um JSON local com respostas escritas; não oferece avaliação por IA. |
+| `scripts/import-chatgpt-export.mjs` | Arquiva **objetos integrais das conversas selecionadas por ID** em pasta privada, com hash e manifesto; exige o `conversations.json` original para executar. Não é ainda o extrator estruturado de aulas e não recupera estados efêmeros dos widgets. |
+| `AGENTS.md` | Instruções de continuidade dirigidas ao Codex, com preservação do conteúdo histórico e limites de publicação. |
+| `scripts/validate-data.mjs`, `tests/importer.test.mjs`, GitHub Actions | Validação de catálogos, consistência do piloto e segurança básica de seleção na importação. Resultados de execução devem ser registrados separadamente. |
+
+**Atualização do veredito:** existe agora um **protótipo técnico executável no código**, mas o requisito de migração integral continua **NÃO CONFORME**. A auditoria histórica das aulas A1–B1 não pode ser completada sem a exportação original; o planejamento B2/C1 ainda não foi convertido em aulas completas. As ausências de banco, autenticação, geração/correção por IA e áudio/fala permanecem intencionais nesta etapa. Nenhum deploy ou merge foi realizado.
+
+**Critério de honestidade:** campos e opções do piloto são uma demonstração construída no projeto; não podem entrar na contagem de 'aulas originais preservadas'. Comprovar que botões funcionam no piloto é diferente de comprovar que todos os botões das aulas históricas foram recuperados.
