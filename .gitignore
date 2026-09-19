@@ -5,6 +5,8 @@ chat.html
 *.zip
 *.sqlite
 *.db
+tmp/
+Curso de Gramática por Chunks.pdf
 .env
 .env.*
 !.env.example

@@ -7,6 +7,17 @@ export function normalizeExport(value) {
   if(!conversations)throw new Error("Formato inválido: era esperado um array de conversas do ChatGPT.");
   return conversations.filter(v=>v&&typeof v==="object");
 }
+export function normalizeSourcePackage(value){
+  if(value?.package_type!=="real_english_lossless_source_package"||!Array.isArray(value.sources)){
+    throw new Error("Formato inválido: era esperado um pacote literal de fontes do REAL ENGLISH.");
+  }
+  for(const source of value.sources){
+    if(!source?.source_id||!Array.isArray(source.pages)||source.pages.some(page=>!Number.isInteger(page?.page)||typeof page?.text!=="string")){
+      throw new Error("Pacote de fontes incompleto ou inválido.");
+    }
+  }
+  return value;
+}
 export function extractMessageText(message){
   const content=message?.content;
   if(!content)return "";

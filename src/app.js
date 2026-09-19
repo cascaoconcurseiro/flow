@@ -1,13 +1,14 @@
 import {mountArchive} from "./archive-browser.mjs";
-const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json"};
+const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json",sourceIndex:"./data/recovered-source-index.json",masterPrompt:"./curriculum/prompt_mestre_professor_interativo.md"};
 const STORE_KEY="real-english-technical-demo-v1";
 const root=document.getElementById("view");
 const nav=document.getElementById("level-nav");
 const status=document.getElementById("announcements");
+document.getElementById("open-master-prompt")?.addEventListener("click",()=>{route="master-prompt";render();document.getElementById("main").focus()});
 document.getElementById("open-pdf-lesson").addEventListener("click",gotoPdfLesson);
 document.getElementById("open-pdf-plan").addEventListener("click",()=>{route="pdf-plan";render();document.getElementById("main").focus()});
-document.getElementById("open-private-archive").addEventListener("click",()=>{route="archive";render();document.getElementById("main").focus()});
-let curriculum=null,demo=null,originalDemo=null,pdfLesson=null,pdfPlan=null,level="A1",route="catalog",cardIndex=0,activeStoreKey=STORE_KEY;
+document.getElementById("open-private-archive").addEventListener("click",gotoArchive);
+let curriculum=null,demo=null,originalDemo=null,pdfLesson=null,pdfPlan=null,sourceIndex=null,currentHistoricalLesson=null,masterPromptText="",level="A1",route="catalog",cardIndex=0,activeStoreKey=STORE_KEY;
 const emptyProgress=()=>({answers:{},checked:false,translation:false,grades:{},cardBack:false,dialogueIndex:0,dialogueHistory:[],writing:{},checks:{},transformations:{},shownModels:{},explorerChoice:"problem",explorerTranslation:false});
 let progress=loadProgress();
 function loadProgress(){try{return {...emptyProgress(),...JSON.parse(localStorage.getItem(activeStoreKey)||"{}")}}catch{return emptyProgress()}}
@@ -23,18 +24,39 @@ function divider(){return node("hr",null,"divider")}
 function toolbar(...nodes){return add(node("div",null,"toolbar"),...nodes)}
 function gotoDemo(){demo=originalDemo;activeStoreKey=STORE_KEY;progress=loadProgress();route="demo";cardIndex=0;render();document.getElementById("main").focus()}
 function gotoPdfLesson(){demo=pdfLesson;activeStoreKey="real-english-pdf-a0-aula-01-v1";progress=loadProgress();route="pdf-lesson";cardIndex=0;render();document.getElementById("main").focus()}
+function gotoArchive(){route="archive";render();document.getElementById("main").focus()}
 function gotoCatalog(next){level=next;route="catalog";render();document.getElementById("main").focus()}
+async function openHistoricalLesson(sourcePath){
+ try{
+  announce("Carregando aula…");
+  const res=await fetch(sourcePath);
+  if(!res.ok)throw new Error("Não foi possível carregar a aula selecionada");
+  currentHistoricalLesson=await res.json();
+  route="historical-lesson";
+  render();
+  document.getElementById("main").focus();
+  announce(currentHistoricalLesson.title);
+ }catch(e){announce(e.message)}
+}
 function renderNav(){nav.replaceChildren();for(const v of curriculum.volumes){const b=button(v.level,()=>gotoCatalog(v.level));b.setAttribute("aria-current",String(v.level===level));nav.append(b)}}
-function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="pdf-plan")renderPdfPlan();else if(route==="demo"||route==="pdf-lesson")renderDemo();else renderCatalog()}
+function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="pdf-plan")renderPdfPlan();else if(route==="demo"||route==="pdf-lesson")renderDemo();else if(route==="historical-lesson")renderHistoricalLesson();else if(route==="master-prompt")renderMasterPrompt();else renderCatalog()}
 function renderCatalog(){
 const v=curriculum.volumes.find(x=>x.level===level);const overview=panel(level+" · "+v.title);
 const count=v.planned_lesson_count===null?"Quantidade original ainda não recuperada":v.planned_lesson_count+" posições no catálogo";
 overview.append(pill(count),para(v.notes,"muted"));
 if(level==="B1")overview.append(add(node("div",null,"notice"),node("strong","Demonstração técnica disponível"),para("A demonstração abaixo exercita perguntas, tradução revelável, cards, diálogos e escrita. Não é a aula integral original."),button("Abrir aula-piloto funcional",gotoDemo,"btn primary")));
 root.append(overview);
+renderRecoveredSources();
 if(!v.modules.length&&!v.lesson_records.length){root.append(add(panel("Fontes históricas pendentes"),para("Este nível ainda precisa de extração integral das conversas do curso. Não foram inventados títulos ou conteúdos para preencher as lacunas.")));return}
-if(v.lesson_records.length){const p=panel("Aulas catalogadas");for(const l of v.lesson_records){const row=node("div",null,"lesson-row");const left=node("div");left.append(node("strong",String(l.number).padStart(2,"0")+" · "+(l.title||"Título original ainda não recuperado")),para(l.status.replaceAll("_"," "),"muted"));row.append(left);if(l.number===32)row.append(button("Testar componentes",gotoDemo,"btn small secondary"));else row.append(pill("Acervo original pendente","warning"));p.append(row)}root.append(p)}
+if(v.lesson_records.length){const p=panel("Aulas catalogadas");for(const l of v.lesson_records){const row=node("div",null,"lesson-row");const left=node("div");left.append(node("strong",String(l.number).padStart(2,"0")+" · "+(l.title||"Título original ainda não recuperado")),para(l.status.replaceAll("_"," "),"muted"));row.append(left);const actions=node("div");if(l.source&&l.source!=="not_available"){actions.append(button("Abrir aula original",()=>openHistoricalLesson(l.source),"btn small primary"))}if(l.number===32&&level==="B1"){actions.append(button("Testar componentes",gotoDemo,"btn small secondary"))}else if(!l.source||l.source==="not_available"){actions.append(pill("Acervo original pendente","warning"))}row.append(actions);p.append(row)}root.append(p)}
 for(const m of v.modules){const d=node("details",null,"module");d.append(node("summary",m.number+" · "+m.title+" · "+m.lessons.length+" partes"));const body=node("div",null,"module-body");for(const l of m.lessons){const row=node("div",null,"lesson-row"),left=node("div");left.append(node("strong",String(l.number).padStart(2,"0")+" · "+l.title),para(l.objective,"muted"));row.append(left,pill("Planejada; ainda não redigida","warning"));body.append(row)}d.append(body);root.append(d)}
+}
+function renderRecoveredSources(){
+ const indexed=sourceIndex.levels[level];if(!indexed)return;
+ if(indexed.roadmap_from_source){const roadmap=panel("Direção curricular recuperada da fonte");roadmap.append(pill("PLANEJAMENTO · NÃO É AULA PRONTA","warning"),para(indexed.roadmap_from_source));root.append(roadmap)}
+ if(indexed.planning_variant){const variant=indexed.planning_variant,box=panel("Sequência A1 recuperada — variante de planejamento");box.append(para("Esta lista aparece literalmente no PDF anterior, mas ainda não foi comprovada como a numeração do curso histórico.","notice"));for(const item of variant.items){const row=node("div",null,"lesson-row"),left=node("div");left.append(node("strong",String(item.number).padStart(2,"0")+" · "+item.title));row.append(left,pill("Planejamento recuperado","warning"));box.append(row)}root.append(box)}
+ const records=sourceIndex.recovered_materials.filter(item=>indexed.recovered_material_ids.includes(item.id));
+ if(records.length){const box=panel("Materiais já recuperados");for(const item of records){const row=node("div",null,"lesson-row"),left=node("div");left.append(node("strong",item.title),para(item.content_note,"muted"),pill(item.status.replaceAll("_"," "),item.status.includes("original")?"good":"warning"));const open=item.id===demo.id?button("Abrir demonstração",gotoDemo,"btn small primary"):button("Conferir fonte literal",gotoArchive,"btn small secondary");row.append(left,open);box.append(row)}root.append(box)}
 }
 function renderDemo(){
 const heading=panel(demo.title);heading.append(pill(route==="pdf-lesson"?"EXEMPLO ORIGINAL DO PDF · ATIVIDADES NOVAS":"PILOTO · NÃO É O ORIGINAL",route==="pdf-lesson"?"good":"warning"),para(demo.subtitle),toolbar(button("← Voltar ao currículo",()=>gotoCatalog(route==="pdf-lesson"?"A1":"B1"))));root.append(heading);
@@ -144,4 +166,31 @@ const misses=demo.reading.questions.filter(q=>progress.checked&&progress.answers
 if(progress.checked)p.append(para(misses.length?"Revise estes contrastes: "+misses.join(" "):"Questões de leitura corretas. Confirme a habilidade na escrita independente.","muted"));
 p.append(para(route==="pdf-lesson"?"O PDF apresenta esta Aula 01 como exemplo inicial do nível A0. Os exercícios criados para o site não são os exercícios originais; concluí-los não certifica proficiência.":"Concluir a demonstração não significa concluir a aula original, o volume B1 ou uma certificação CEFR.","subtle muted"));
 p.append(button("Reiniciar somente o progresso desta aula",()=>{if(confirm("Apagar respostas e avaliações locais apenas desta aula?")){progress=emptyProgress();cardIndex=0;save();render()}},"btn small"));root.append(p)}
-(async()=>{try{const [c,l,p,s]=await Promise.all([fetch(PATHS.curriculum),fetch(PATHS.demo),fetch(PATHS.pdfLesson),fetch(PATHS.pdfPlan)]);if(!c.ok||!l.ok||!p.ok||!s.ok)throw new Error("Falha ao carregar os arquivos JSON");curriculum=await c.json();originalDemo=await l.json();pdfLesson=await p.json();pdfPlan=await s.json();demo=originalDemo;render()}catch(e){root.replaceChildren(add(panel("Não foi possível carregar o curso"),para(e.message),para("Sirva a pasta por um servidor local (por exemplo: npm run dev). Abrir index.html diretamente como arquivo pode bloquear a leitura dos JSON.")))}})();
+function renderHistoricalLesson(){
+ if(!currentHistoricalLesson)return gotoCatalog(level);
+ const l=currentHistoricalLesson;
+ const heading=panel(l.level+" · Parte "+String(l.part).padStart(2,"0")+" — "+l.title);
+ heading.append(pill("ORIGINAL HISTÓRICO · TURNO "+l.turn_ordinal,"good"),pill((Math.round(l.character_count/1000))+"k caracteres"),toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(l.level))));
+ root.append(heading);
+ if(l.user_prompt){
+  const promptBox=panel("Comando histórico na conversa");
+  promptBox.append(para(l.user_prompt,"muted subtle"));
+  root.append(promptBox);
+ }
+ const bodyBox=panel("Conteúdo da Aula");
+ bodyBox.append(para("Esta aula foi transcrita literalmente da conversa histórica do REAL ENGLISH. Leia o conteúdo original com seus contrastes, regras, diálogos e flashcards.","notice"));
+ const pre=node("pre",l.raw_markdown,"archive-pre reading");
+ bodyBox.append(pre);
+ bodyBox.append(toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(l.level),"btn primary")));
+ root.append(bodyBox);
+}
+function renderMasterPrompt(){
+ const p=panel("Prompt Mestre de Autoria — Professor Interativo");
+ p.append(pill("TURNO 5 · CONVERSA HISTÓRICA","good"),toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(level))));
+ p.append(para("Este é o prompt original que instrui o assistente a ensinar por chunks, com reading em inglês primeiro, cartões estilo Anki, seletores de frases e simulações comunicativas.","notice"));
+ const pre=node("pre",masterPromptText||"Carregando prompt…","archive-pre reading");
+ p.append(pre);
+ p.append(toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(level),"btn primary")));
+ root.append(p);
+}
+(async()=>{try{const [c,l,p,s,idx,pr]=await Promise.all([fetch(PATHS.curriculum),fetch(PATHS.demo),fetch(PATHS.pdfLesson),fetch(PATHS.pdfPlan),fetch(PATHS.sourceIndex),fetch(PATHS.masterPrompt)]);if(!c.ok||!l.ok||!p.ok||!s.ok||!idx.ok||!pr.ok)throw new Error("Falha ao carregar os arquivos JSON");curriculum=await c.json();originalDemo=await l.json();pdfLesson=await p.json();pdfPlan=await s.json();sourceIndex=await idx.json();masterPromptText=await pr.text();demo=originalDemo;render()}catch(e){root.replaceChildren(add(panel("Não foi possível carregar o curso"),para(e.message),para("Sirva a pasta por um servidor local (por exemplo: npm run dev). Abrir index.html diretamente como arquivo pode bloquear a leitura dos JSON.")))}})();

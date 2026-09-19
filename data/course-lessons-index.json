@@ -1,0 +1,447 @@
+{
+  "schema_version": "1.0.0",
+  "course_title": "Curso de Gramática por Chunks",
+  "source_conversation_id": "6aae7bb5-ce14-83e9-ace7-168d26f59110",
+  "generated_at": "2026-09-19T20:26:25.207Z",
+  "totals": {
+    "a1_lessons": 6,
+    "a2_lessons": 9,
+    "b1_lessons": 33,
+    "b2_planned": 40,
+    "c1_planned": 40
+  },
+  "lessons": [
+    {
+      "id": "a1-part-01",
+      "level": "A1",
+      "part": 1,
+      "title": "Como construir suas primeiras frases",
+      "turn_ordinal": 6,
+      "character_count": 101220,
+      "file_path": "data/lessons/a1/part-01.json"
+    },
+    {
+      "id": "a1-part-02",
+      "level": "A1",
+      "part": 2,
+      "title": "A, AN & THE",
+      "turn_ordinal": 7,
+      "character_count": 115234,
+      "file_path": "data/lessons/a1/part-02.json"
+    },
+    {
+      "id": "a1-part-03",
+      "level": "A1",
+      "part": 3,
+      "title": "Present Simple: primeiras afirmações",
+      "turn_ordinal": 8,
+      "character_count": 102741,
+      "file_path": "data/lessons/a1/part-03.json"
+    },
+    {
+      "id": "a1-part-04",
+      "level": "A1",
+      "part": 4,
+      "title": "Present Continuous: primeiras afirmações",
+      "turn_ordinal": 9,
+      "character_count": 95913,
+      "file_path": "data/lessons/a1/part-04.json"
+    },
+    {
+      "id": "a1-part-05",
+      "level": "A1",
+      "part": 5,
+      "title": "HAVE: o que você tem?",
+      "turn_ordinal": 10,
+      "character_count": 92850,
+      "file_path": "data/lessons/a1/part-05.json"
+    },
+    {
+      "id": "a1-part-06",
+      "level": "A1",
+      "part": 6,
+      "title": "Qual estrutura devo usar?",
+      "turn_ordinal": 11,
+      "character_count": 85147,
+      "file_path": "data/lessons/a1/part-06.json"
+    },
+    {
+      "id": "a2-part-01",
+      "level": "A2",
+      "part": 1,
+      "title": "WAS e WERE: o passado de TO BE",
+      "turn_ordinal": 12,
+      "character_count": 82789,
+      "file_path": "data/lessons/a2/part-01.json"
+    },
+    {
+      "id": "a2-part-02",
+      "level": "A2",
+      "part": 2,
+      "title": "Recupere a base antes de contar histórias",
+      "turn_ordinal": 13,
+      "character_count": 101580,
+      "file_path": "data/lessons/a2/part-02.json"
+    },
+    {
+      "id": "a2-part-03",
+      "level": "A2",
+      "part": 3,
+      "title": "Antes do futuro: entenda as peças da frase",
+      "turn_ordinal": 14,
+      "character_count": 90362,
+      "file_path": "data/lessons/a2/part-03.json"
+    },
+    {
+      "id": "a2-part-04",
+      "level": "A2",
+      "part": 4,
+      "title": "Antes de comparar: entenda os adjetivos",
+      "turn_ordinal": 15,
+      "character_count": 107753,
+      "file_path": "data/lessons/a2/part-04.json"
+    },
+    {
+      "id": "a2-part-05",
+      "level": "A2",
+      "part": 5,
+      "title": "Antes do Present Perfect: os três papéis de HAVE e as formas do verbo",
+      "turn_ordinal": 16,
+      "character_count": 97897,
+      "file_path": "data/lessons/a2/part-05.json"
+    },
+    {
+      "id": "a2-part-06",
+      "level": "A2",
+      "part": 6,
+      "title": "O passado que continua e o passado que terminou",
+      "turn_ordinal": 17,
+      "character_count": 97562,
+      "file_path": "data/lessons/a2/part-06.json"
+    },
+    {
+      "id": "a2-part-07",
+      "level": "A2",
+      "part": 7,
+      "title": "CAN e o pré-requisito essencial: modal + verbo base",
+      "turn_ordinal": 18,
+      "character_count": 97155,
+      "file_path": "data/lessons/a2/part-07.json"
+    },
+    {
+      "id": "a2-part-08",
+      "level": "A2",
+      "part": 8,
+      "title": "IF e WHEN: duas ideias relacionadas, mas diferentes",
+      "turn_ordinal": 19,
+      "character_count": 96126,
+      "file_path": "data/lessons/a2/part-08.json"
+    },
+    {
+      "id": "a2-part-09",
+      "level": "A2",
+      "part": 9,
+      "title": "Uma história inteira antes da gramática",
+      "turn_ordinal": 20,
+      "character_count": 96009,
+      "file_path": "data/lessons/a2/part-09.json"
+    },
+    {
+      "id": "b1-part-01",
+      "level": "B1",
+      "part": 1,
+      "title": "Compreensão primeiro: The train had already left",
+      "turn_ordinal": 21,
+      "character_count": 88800,
+      "file_path": "data/lessons/b1/part-01.json"
+    },
+    {
+      "id": "b1-part-02",
+      "level": "B1",
+      "part": 2,
+      "title": "Compreensão primeiro: Why was Daniel so tired?",
+      "turn_ordinal": 22,
+      "character_count": 87975,
+      "file_path": "data/lessons/b1/part-02.json"
+    },
+    {
+      "id": "b1-part-03",
+      "level": "B1",
+      "part": 3,
+      "title": "Compreensão antes da gramática",
+      "turn_ordinal": 23,
+      "character_count": 86595,
+      "file_path": "data/lessons/b1/part-03.json"
+    },
+    {
+      "id": "b1-part-04",
+      "level": "B1",
+      "part": 4,
+      "title": "Compreensão primeiro: The train I missed",
+      "turn_ordinal": 24,
+      "character_count": 91911,
+      "file_path": "data/lessons/b1/part-04.json"
+    },
+    {
+      "id": "b1-part-05",
+      "level": "B1",
+      "part": 5,
+      "title": "Compreensão primeiro: Three things Daniel wishes were different",
+      "turn_ordinal": 25,
+      "character_count": 88979,
+      "file_path": "data/lessons/b1/part-05.json"
+    },
+    {
+      "id": "b1-part-06",
+      "level": "B1",
+      "part": 6,
+      "title": "Compreensão primeiro: What did Emma say?",
+      "turn_ordinal": 26,
+      "character_count": 95673,
+      "file_path": "data/lessons/b1/part-06.json"
+    },
+    {
+      "id": "b1-part-07",
+      "level": "B1",
+      "part": 7,
+      "title": "Compreensão primeiro: Which bag is yours?",
+      "turn_ordinal": 27,
+      "character_count": 88417,
+      "file_path": "data/lessons/b1/part-07.json"
+    },
+    {
+      "id": "b1-part-08",
+      "level": "B1",
+      "part": 8,
+      "title": "Compreensão primeiro: My bag was found!",
+      "turn_ordinal": 28,
+      "character_count": 80931,
+      "file_path": "data/lessons/b1/part-08.json"
+    },
+    {
+      "id": "b1-part-09",
+      "level": "B1",
+      "part": 9,
+      "title": "Compreensão primeiro: Has the reservation been confirmed?",
+      "turn_ordinal": 29,
+      "character_count": 87815,
+      "file_path": "data/lessons/b1/part-09.json"
+    },
+    {
+      "id": "b1-part-10",
+      "level": "B1",
+      "part": 10,
+      "title": "Compreensão primeiro: Where could the package be?",
+      "turn_ordinal": 30,
+      "character_count": 97032,
+      "file_path": "data/lessons/b1/part-10.json"
+    },
+    {
+      "id": "b1-part-11",
+      "level": "B1",
+      "part": 11,
+      "title": "Compreensão primeiro: Why did Daniel arrive late?",
+      "turn_ordinal": 31,
+      "character_count": 95347,
+      "file_path": "data/lessons/b1/part-11.json"
+    },
+    {
+      "id": "b1-part-12",
+      "level": "B1",
+      "part": 12,
+      "title": "Compreensão primeiro: Could you help me with my reservation?",
+      "turn_ordinal": 32,
+      "character_count": 88548,
+      "file_path": "data/lessons/b1/part-12.json"
+    },
+    {
+      "id": "b1-part-13",
+      "level": "B1",
+      "part": 13,
+      "title": "Compreensão primeiro: Everything went wrong this morning",
+      "turn_ordinal": 33,
+      "character_count": 80780,
+      "file_path": "data/lessons/b1/part-13.json"
+    },
+    {
+      "id": "b1-part-14",
+      "level": "B1",
+      "part": 14,
+      "title": "Compreensão primeiro: Why did Emma stop running?",
+      "turn_ordinal": 34,
+      "character_count": 88649,
+      "file_path": "data/lessons/b1/part-14.json"
+    },
+    {
+      "id": "b1-part-15",
+      "level": "B1",
+      "part": 15,
+      "title": "Compreensão primeiro: Do we have everything we need?",
+      "turn_ordinal": 35,
+      "character_count": 96761,
+      "file_path": "data/lessons/b1/part-15.json"
+    },
+    {
+      "id": "b1-part-16",
+      "level": "B1",
+      "part": 16,
+      "title": "Compreensão primeiro: Which option should we choose?",
+      "turn_ordinal": 36,
+      "character_count": 88309,
+      "file_path": "data/lessons/b1/part-16.json"
+    },
+    {
+      "id": "b1-part-17",
+      "level": "B1",
+      "part": 17,
+      "title": "Compreensão primeiro: Can we still catch the train?",
+      "turn_ordinal": 37,
+      "character_count": 90396,
+      "file_path": "data/lessons/b1/part-17.json"
+    },
+    {
+      "id": "b1-part-18",
+      "level": "B1",
+      "part": 18,
+      "title": "Compreensão primeiro: A trip we won't forget",
+      "turn_ordinal": 38,
+      "character_count": 83493,
+      "file_path": "data/lessons/b1/part-18.json"
+    },
+    {
+      "id": "b1-part-19",
+      "level": "B1",
+      "part": 19,
+      "title": "Compreensão primeiro: Everything is ready, isn't it?",
+      "turn_ordinal": 39,
+      "character_count": 75468,
+      "file_path": "data/lessons/b1/part-19.json"
+    },
+    {
+      "id": "b1-part-20",
+      "level": "B1",
+      "part": 20,
+      "title": "Compreensão primeiro: We missed the train",
+      "turn_ordinal": 40,
+      "character_count": 93174,
+      "file_path": "data/lessons/b1/part-20.json"
+    },
+    {
+      "id": "b1-part-21",
+      "level": "B1",
+      "part": 21,
+      "title": "Compreensão primeiro: Have you ever been there?",
+      "turn_ordinal": 41,
+      "character_count": 88135,
+      "file_path": "data/lessons/b1/part-21.json"
+    },
+    {
+      "id": "b1-part-22",
+      "level": "B1",
+      "part": 22,
+      "title": "Compreensão primeiro: What are we doing next March?",
+      "turn_ordinal": 42,
+      "character_count": 81252,
+      "file_path": "data/lessons/b1/part-22.json"
+    },
+    {
+      "id": "b1-part-23",
+      "level": "B1",
+      "part": 23,
+      "title": "Compreensão primeiro: A trip with a backup plan",
+      "turn_ordinal": 43,
+      "character_count": 84946,
+      "file_path": "data/lessons/b1/part-23.json"
+    },
+    {
+      "id": "b1-part-24",
+      "level": "B1",
+      "part": 24,
+      "title": "Compreensão primeiro: What do we have to do?",
+      "turn_ordinal": 44,
+      "character_count": 81133,
+      "file_path": "data/lessons/b1/part-24.json"
+    },
+    {
+      "id": "b1-part-25",
+      "level": "B1",
+      "part": 25,
+      "title": "Compreensão primeiro: Where could Emma be?",
+      "turn_ordinal": 45,
+      "character_count": 83141,
+      "file_path": "data/lessons/b1/part-25.json"
+    },
+    {
+      "id": "b1-part-26",
+      "level": "B1",
+      "part": 26,
+      "title": "Compreensão primeiro: What did Emma actually say?",
+      "turn_ordinal": 46,
+      "character_count": 88758,
+      "file_path": "data/lessons/b1/part-26.json"
+    },
+    {
+      "id": "b1-part-27",
+      "level": "B1",
+      "part": 27,
+      "title": "Compreensão primeiro: Has the confirmation been sent?",
+      "turn_ordinal": 47,
+      "character_count": 77472,
+      "file_path": "data/lessons/b1/part-27.json"
+    },
+    {
+      "id": "b1-part-28",
+      "level": "B1",
+      "part": 28,
+      "title": "Compreensão primeiro: Which booking are we talking about?",
+      "turn_ordinal": 50,
+      "character_count": 64466,
+      "file_path": "data/lessons/b1/part-28.json"
+    },
+    {
+      "id": "b1-part-29",
+      "level": "B1",
+      "part": 29,
+      "title": "Compreensão primeiro: A different kind of trip",
+      "turn_ordinal": 51,
+      "character_count": 65747,
+      "file_path": "data/lessons/b1/part-29.json"
+    },
+    {
+      "id": "b1-part-30",
+      "level": "B1",
+      "part": 30,
+      "title": "Compreensão primeiro: What have you been doing?",
+      "turn_ordinal": 52,
+      "character_count": 70229,
+      "file_path": "data/lessons/b1/part-30.json"
+    },
+    {
+      "id": "b1-part-31",
+      "level": "B1",
+      "part": 31,
+      "title": "Compreensão primeiro: I used to do things differently",
+      "turn_ordinal": 53,
+      "character_count": 69346,
+      "file_path": "data/lessons/b1/part-31.json"
+    },
+    {
+      "id": "b1-part-32",
+      "level": "B1",
+      "part": 32,
+      "title": "Compreensão primeiro: We need to sort this out",
+      "turn_ordinal": 54,
+      "character_count": 65508,
+      "file_path": "data/lessons/b1/part-32.json"
+    },
+    {
+      "id": "b1-part-33",
+      "level": "B1",
+      "part": 33,
+      "title": "Reading assessment: dois textos inéditos",
+      "turn_ordinal": 55,
+      "character_count": 51344,
+      "file_path": "data/lessons/b1/part-33.json"
+    }
+  ]
+}

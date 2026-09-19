@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   normalizeExport,extractMessageText,orderedNodes,activePath,
-  interactionInventory,candidateCourseConversation,safeConversationFilename
+  interactionInventory,candidateCourseConversation,safeConversationFilename,normalizeSourcePackage
 } from "../src/archive-core.mjs";
 const conversation={
  id:"real-english-01",title:"REAL ENGLISH — Parte 32",
@@ -45,4 +45,10 @@ test("preserva elementos não textuais no bruto sem fingir extração fiel de m�
  assert(extractMessageText(msg).includes("PARTE NÃO TEXTUAL"));
  assert.equal(candidateCourseConversation(conversation),true);
  assert.match(safeConversationFilename("../Real English?"),/^real-english-conversation-[A-Za-z0-9_-]+\.json$/);
+});
+test("reconhece pacote literal de páginas sem converter seu conteúdo",()=>{
+ const source={package_type:"real_english_lossless_source_package",sources:[{source_id:"pdf",page_count:1,pages:[{page:1,text:"  conteúdo literal\n"}]}]};
+ assert.equal(normalizeSourcePackage(source),source);
+ assert.equal(normalizeSourcePackage(source).sources[0].pages[0].text,"  conteúdo literal\n");
+ assert.throws(()=>normalizeSourcePackage({package_type:"outro",sources:[]}),/pacote/i);
 });

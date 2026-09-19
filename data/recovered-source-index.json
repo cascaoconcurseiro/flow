@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Índice público de fontes recuperadas. O texto literal completo permanece no pacote privado; este arquivo não transforma planejamento em aula.",
+  "private_package": ".private/source-archives/real-english-course-package.json",
+  "levels": {
+    "A1": {
+      "curriculum_status": "archive_required; original historical lesson count remains unknown",
+      "planning_variant": {
+        "title": "Volume 1 — Do zero às primeiras conversas",
+        "status": "planning_variant_not_historical_course",
+        "source_id": "curso-gramatica-por-chunks-pdf-78-pages",
+        "source_pages": [45, 46],
+        "items": [
+          {"number": 1, "title": "Primeiro contato com o inglês"},
+          {"number": 2, "title": "TO BE — Presente afirmativo"},
+          {"number": 3, "title": "TO BE — Perguntas e negações"},
+          {"number": 4, "title": "Pronomes, possessivos e demonstrativos"},
+          {"number": 5, "title": "Artigos, substantivos e adjetivos"},
+          {"number": 6, "title": "HAVE — Posse e relações"},
+          {"number": 7, "title": "THERE IS / THERE ARE"},
+          {"number": 8, "title": "Preposições e localização"},
+          {"number": 9, "title": "Present Simple — Primeiras ações"},
+          {"number": 10, "title": "Present Simple — DO e DOES"},
+          {"number": 11, "title": "CAN — Capacidade e permissão"},
+          {"number": 12, "title": "Integração e conversação"}
+        ]
+      },
+      "roadmap_from_source": "Present Continuous, imperativos, perguntas WH mais amplas, verbos frequentes, quantificadores, pronomes objeto, conectores básicos, preferências, pedidos, convites e situações cotidianas.",
+      "recovered_material_ids": ["SOURCE-A1-FIRST-CONTACT"]
+    },
+    "A2": {
+      "curriculum_status": "archive_required; original historical lesson count remains unknown",
+      "roadmap_from_source": "Past Simple, verbos irregulares, Past Continuous, WILL, GOING TO, comparativos, infinitivos e gerúndios introdutórios, HAVE TO, SHOULD, COULD e Present Perfect introdutório, incluindo HAVE YOU EVER.",
+      "recovered_material_ids": ["SOURCE-A2-B1-PRESENT-PERFECT"]
+    },
+    "B1": {
+      "curriculum_status": "33 catalog positions; historical lessons still require extraction",
+      "roadmap_from_source": "Present Perfect aprofundado, Present Perfect Continuous, Past Perfect, hábitos passados, condicionais, voz passiva, discurso indireto, modais em diferentes funções, relative clauses e narrativas mais longas.",
+      "recovered_material_ids": ["SOURCE-A2-B1-PRESENT-PERFECT", "DEMO-B1-COMMUNICATION"]
+    },
+    "B2": {
+      "curriculum_status": "40 planned_not_authored lessons in the curriculum JSON",
+      "roadmap_from_source": "Tempos perfeitos e contínuos mais complexos, hipóteses no passado, condicionais mistos, modais de dedução, causativos, construções passivas avançadas, relações entre orações, registro e nuances de significado.",
+      "recovered_material_ids": []
+    },
+    "C1": {
+      "curriculum_status": "40 planned_not_authored lessons in the curriculum JSON",
+      "roadmap_from_source": "Sintaxe complexa, inversões, estruturas de ênfase, elipse avançada, padrões de discurso, variações de registro, pragmática, interpretação de linguagem implícita, diferenças entre variedades do inglês e comunicação em contextos acadêmicos, profissionais e sociais.",
+      "recovered_material_ids": []
+    }
+  },
+  "recovered_materials": [
+    {
+      "id": "SOURCE-A2-B1-PRESENT-PERFECT",
+      "title": "Have you ever...? — Present Perfect — Experiências de vida",
+      "levels": ["A2", "B1"],
+      "status": "historical_original_unverified",
+      "source_id": "curso-gramatica-por-chunks-pdf-78-pages",
+      "source_pages": {"start": 24, "end": 42},
+      "content_note": "A fonte contém leitura, alternativas, respostas, tradução revelável, explicações, chunks, exercícios, diálogo, revisão e produção. O texto literal está preservado no pacote privado e ainda precisa de normalização campo a campo para a interface."
+    },
+    {
+      "id": "SOURCE-A1-FIRST-CONTACT",
+      "title": "Primeiro contato com o inglês",
+      "levels": ["A1"],
+      "status": "historical_variant_unverified",
+      "source_id": "curso-gramatica-por-chunks-pdf-78-pages",
+      "source_pages": {"start": 68, "end": 69},
+      "content_note": "Demonstração A1 recuperada com compreensão antes da tradução e exploração de frases; não comprovada como aula oficial da sequência histórica."
+    },
+    {
+      "id": "DEMO-B1-COMMUNICATION",
+      "title": "Demonstração técnica — esclarecer um problema",
+      "levels": ["B1"],
+      "status": "technical_demo_not_original",
+      "source_id": "data/demo-lesson.json",
+      "source_pages": null,
+      "content_note": "Aula técnica funcional criada para testar os componentes; não substitui uma aula histórica."
+    }
+  ]
+}

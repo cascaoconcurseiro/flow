@@ -43,332 +43,517 @@
       "level": "A1",
       "volume": 1,
       "title": "Foundation",
-      "planned_lesson_count": null,
-      "status": "archive_required",
-      "count_verified": false,
+      "planned_lesson_count": 6,
+      "status": "imported_unverified",
+      "count_verified": true,
       "modules": [],
-      "lesson_records": [],
-      "notes": "Número de partes, títulos e textos originais do A1 não constam integralmente no contexto atual; recuperar exportação antes de cadastrar. Não inventar aulas."
+      "lesson_records": [
+        {
+          "id": "A1-V1-P01",
+          "number": 1,
+          "title": "Como construir suas primeiras frases",
+          "status": "imported_unverified",
+          "source": "data/lessons/a1/part-01.json",
+          "turn_ordinal": 6,
+          "character_count": 101220,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A1-V1-P02",
+          "number": 2,
+          "title": "A, AN & THE",
+          "status": "imported_unverified",
+          "source": "data/lessons/a1/part-02.json",
+          "turn_ordinal": 7,
+          "character_count": 115234,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A1-V1-P03",
+          "number": 3,
+          "title": "Present Simple: primeiras afirmações",
+          "status": "imported_unverified",
+          "source": "data/lessons/a1/part-03.json",
+          "turn_ordinal": 8,
+          "character_count": 102741,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A1-V1-P04",
+          "number": 4,
+          "title": "Present Continuous: primeiras afirmações",
+          "status": "imported_unverified",
+          "source": "data/lessons/a1/part-04.json",
+          "turn_ordinal": 9,
+          "character_count": 95913,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A1-V1-P05",
+          "number": 5,
+          "title": "HAVE: o que você tem?",
+          "status": "imported_unverified",
+          "source": "data/lessons/a1/part-05.json",
+          "turn_ordinal": 10,
+          "character_count": 92850,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A1-V1-P06",
+          "number": 6,
+          "title": "Qual estrutura devo usar?",
+          "status": "imported_unverified",
+          "source": "data/lessons/a1/part-06.json",
+          "turn_ordinal": 11,
+          "character_count": 85147,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        }
+      ],
+      "notes": "6 partes originais recuperadas da exportação histórica da conversa Curso de Gramática por Chunks."
     },
     {
       "level": "A2",
       "volume": 2,
       "title": "Elementary",
-      "planned_lesson_count": null,
-      "status": "archive_required",
-      "count_verified": false,
+      "planned_lesson_count": 9,
+      "status": "imported_unverified",
+      "count_verified": true,
       "modules": [],
-      "lesson_records": [],
-      "notes": "Número de partes, títulos e textos originais do A2 não constam integralmente no contexto atual; recuperar exportação antes de cadastrar. Não inventar aulas."
+      "lesson_records": [
+        {
+          "id": "A2-V2-P01",
+          "number": 1,
+          "title": "WAS e WERE: o passado de TO BE",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-01.json",
+          "turn_ordinal": 12,
+          "character_count": 82789,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P02",
+          "number": 2,
+          "title": "Recupere a base antes de contar histórias",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-02.json",
+          "turn_ordinal": 13,
+          "character_count": 101580,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P03",
+          "number": 3,
+          "title": "Antes do futuro: entenda as peças da frase",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-03.json",
+          "turn_ordinal": 14,
+          "character_count": 90362,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P04",
+          "number": 4,
+          "title": "Antes de comparar: entenda os adjetivos",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-04.json",
+          "turn_ordinal": 15,
+          "character_count": 107753,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P05",
+          "number": 5,
+          "title": "Antes do Present Perfect: os três papéis de HAVE e as formas do verbo",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-05.json",
+          "turn_ordinal": 16,
+          "character_count": 97897,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P06",
+          "number": 6,
+          "title": "O passado que continua e o passado que terminou",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-06.json",
+          "turn_ordinal": 17,
+          "character_count": 97562,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P07",
+          "number": 7,
+          "title": "CAN e o pré-requisito essencial: modal + verbo base",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-07.json",
+          "turn_ordinal": 18,
+          "character_count": 97155,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P08",
+          "number": 8,
+          "title": "IF e WHEN: duas ideias relacionadas, mas diferentes",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-08.json",
+          "turn_ordinal": 19,
+          "character_count": 96126,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        },
+        {
+          "id": "A2-V2-P09",
+          "number": 9,
+          "title": "Uma história inteira antes da gramática",
+          "status": "imported_unverified",
+          "source": "data/lessons/a2/part-09.json",
+          "turn_ordinal": 20,
+          "character_count": 96009,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
+        }
+      ],
+      "notes": "9 partes originais recuperadas da exportação histórica da conversa Curso de Gramática por Chunks."
     },
     {
       "level": "B1",
       "volume": 3,
       "title": "Intermediate",
       "planned_lesson_count": 33,
-      "status": "partially_identified_archive_required",
+      "status": "imported_unverified",
       "count_verified": true,
       "modules": [],
       "lesson_records": [
         {
           "id": "B1-V3-P01",
           "number": 1,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: The train had already left",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-01.json",
+          "turn_ordinal": 21,
+          "character_count": 88800,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P02",
           "number": 2,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Why was Daniel so tired?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-02.json",
+          "turn_ordinal": 22,
+          "character_count": 87975,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P03",
           "number": 3,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão antes da gramática",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-03.json",
+          "turn_ordinal": 23,
+          "character_count": 86595,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P04",
           "number": 4,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: The train I missed",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-04.json",
+          "turn_ordinal": 24,
+          "character_count": 91911,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P05",
           "number": 5,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Three things Daniel wishes were different",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-05.json",
+          "turn_ordinal": 25,
+          "character_count": 88979,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P06",
           "number": 6,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: What did Emma say?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-06.json",
+          "turn_ordinal": 26,
+          "character_count": 95673,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P07",
           "number": 7,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Which bag is yours?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-07.json",
+          "turn_ordinal": 27,
+          "character_count": 88417,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P08",
           "number": 8,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: My bag was found!",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-08.json",
+          "turn_ordinal": 28,
+          "character_count": 80931,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P09",
           "number": 9,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Has the reservation been confirmed?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-09.json",
+          "turn_ordinal": 29,
+          "character_count": 87815,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P10",
           "number": 10,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Where could the package be?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-10.json",
+          "turn_ordinal": 30,
+          "character_count": 97032,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P11",
           "number": 11,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Why did Daniel arrive late?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-11.json",
+          "turn_ordinal": 31,
+          "character_count": 95347,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P12",
           "number": 12,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Could you help me with my reservation?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-12.json",
+          "turn_ordinal": 32,
+          "character_count": 88548,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P13",
           "number": 13,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Everything went wrong this morning",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-13.json",
+          "turn_ordinal": 33,
+          "character_count": 80780,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P14",
           "number": 14,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Why did Emma stop running?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-14.json",
+          "turn_ordinal": 34,
+          "character_count": 88649,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P15",
           "number": 15,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Do we have everything we need?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-15.json",
+          "turn_ordinal": 35,
+          "character_count": 96761,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P16",
           "number": 16,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Which option should we choose?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-16.json",
+          "turn_ordinal": 36,
+          "character_count": 88309,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P17",
           "number": 17,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Can we still catch the train?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-17.json",
+          "turn_ordinal": 37,
+          "character_count": 90396,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P18",
           "number": 18,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: A trip we won't forget",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-18.json",
+          "turn_ordinal": 38,
+          "character_count": 83493,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P19",
           "number": 19,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Everything is ready, isn't it?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-19.json",
+          "turn_ordinal": 39,
+          "character_count": 75468,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P20",
           "number": 20,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: We missed the train",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-20.json",
+          "turn_ordinal": 40,
+          "character_count": 93174,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P21",
           "number": 21,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Have you ever been there?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-21.json",
+          "turn_ordinal": 41,
+          "character_count": 88135,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P22",
           "number": 22,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: What are we doing next March?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-22.json",
+          "turn_ordinal": 42,
+          "character_count": 81252,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P23",
           "number": 23,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: A trip with a backup plan",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-23.json",
+          "turn_ordinal": 43,
+          "character_count": 84946,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P24",
           "number": 24,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: What do we have to do?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-24.json",
+          "turn_ordinal": 44,
+          "character_count": 81133,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P25",
           "number": 25,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Where could Emma be?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-25.json",
+          "turn_ordinal": 45,
+          "character_count": 83141,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P26",
           "number": 26,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: What did Emma actually say?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-26.json",
+          "turn_ordinal": 46,
+          "character_count": 88758,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P27",
           "number": 27,
-          "title": null,
-          "status": "source_required",
-          "source": "not_available",
-          "activity_manifest_status": "not_extracted",
-          "notes": "Título, texto integral e atividades dependem da exportação original."
+          "title": "Compreensão primeiro: Has the confirmation been sent?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-27.json",
+          "turn_ordinal": 47,
+          "character_count": 77472,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P28",
           "number": 28,
-          "title": "Defining Relative Clauses",
-          "status": "identified_from_prior_summary_not_extracted",
-          "source": "prior_conversation_summary",
-          "activity_manifest_status": "not_extracted",
-          "notes": null
+          "title": "Compreensão primeiro: Which booking are we talking about?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-28.json",
+          "turn_ordinal": 50,
+          "character_count": 64466,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P29",
           "number": 29,
-          "title": "Second Conditional & Imaginary Situations",
-          "status": "identified_from_prior_summary_not_extracted",
-          "source": "prior_conversation_summary",
-          "activity_manifest_status": "not_extracted",
-          "notes": null
+          "title": "Compreensão primeiro: A different kind of trip",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-29.json",
+          "turn_ordinal": 51,
+          "character_count": 65747,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P30",
           "number": 30,
-          "title": "Present Perfect Continuous & Duration",
-          "status": "authored_in_current_conversation_not_extracted",
-          "source": "current_conversation",
-          "activity_manifest_status": "not_extracted",
-          "notes": null
+          "title": "Compreensão primeiro: What have you been doing?",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-30.json",
+          "turn_ordinal": 52,
+          "character_count": 70229,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P31",
           "number": 31,
-          "title": "Used To, Habits & Changes Over Time",
-          "status": "authored_in_current_conversation_not_extracted",
-          "source": "current_conversation",
-          "activity_manifest_status": "not_extracted",
-          "notes": null
+          "title": "Compreensão primeiro: I used to do things differently",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-31.json",
+          "turn_ordinal": 53,
+          "character_count": 69346,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P32",
           "number": 32,
-          "title": "Natural B1 Communication & Vocabulary in Context",
-          "status": "authored_in_current_conversation_not_extracted",
-          "source": "current_conversation",
-          "activity_manifest_status": "not_extracted",
-          "notes": null
+          "title": "Compreensão primeiro: We need to sort this out",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-32.json",
+          "turn_ordinal": 54,
+          "character_count": 65508,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         },
         {
           "id": "B1-V3-P33",
           "number": 33,
-          "title": "B1 Final Review & Integrated Assessment",
-          "status": "authored_in_current_conversation_not_extracted",
-          "source": "current_conversation",
-          "activity_manifest_status": "not_extracted",
-          "notes": null
+          "title": "Reading assessment: dois textos inéditos",
+          "status": "imported_unverified",
+          "source": "data/lessons/b1/part-33.json",
+          "turn_ordinal": 55,
+          "character_count": 51344,
+          "notes": "Texto integral e componentes recuperados da conversa histórica."
         }
       ],
-      "notes": "A numeração 1–33 foi informada na conversa. Este inventário não é a extração das aulas originais; as Partes 30–33 têm texto no chat atual mas ainda não estão convertidas em dados de aula."
+      "notes": "Todas as 33 partes originais recuperadas da exportação histórica da conversa Curso de Gramática por Chunks."
     },
     {
       "level": "B2",

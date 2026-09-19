@@ -13,7 +13,8 @@ for(const v of c.volumes){
   assert(v.planned_lesson_count===40&&v.modules.length===8&&v.modules.every(m=>m.lessons.length===5),v.level+": planejamento deve conter 8 módulos × 5 partes");
   assert(lessons.every(l=>l.status==="planned_not_authored"),v.level+": planos não podem ser tratados como aulas já criadas");
  }
- if(["A1","A2"].includes(v.level))assert(v.planned_lesson_count===null&&lessons.length===0,v.level+": não inventar currículo histórico");
+ if(v.level==="A1")assert(lessons.length===6&&v.planned_lesson_count===6,"A1 deve conter as 6 partes originais recuperadas");
+ if(v.level==="A2")assert(lessons.length===9&&v.planned_lesson_count===9,"A2 deve conter as 9 partes originais recuperadas");
  if(v.level==="B1")assert(lessons.length===33&&v.planned_lesson_count===33,"B1 deve conter 33 posições");
 }
 assert(ids.length===new Set(ids).size,"IDs de aula repetidos");
