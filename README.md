@@ -1,13 +1,24 @@
 # REAL ENGLISH — Grammar Through Chunks
 
-**Estado atual: protótipo técnico + planejamento A1–C1 + exemplo original A0/Aula 01 recuperado do PDF. A migração integral do curso permanece pendente.**
+**Estado atual: protótipo de estudo + 48 partes históricas extraídas (A1: 6, A2: 9, B1: 33) + planejamento B2/C1. A reprodução integral dos controles originais ainda está em validação.**
 
 O repositório `cascaoconcurseiro/flow` continha somente `README.md` na `main` quando foi inspecionado. O código de um aplicativo anterior, caso exista em outro local, **não estava aqui**. Esta branch foi criada para dar ao Codex um ponto de partida executável, com navegação de A1 a C1, acesso separado à primeira aula demonstrativa A0 documentada no PDF e mecanismos de estudo reais.
+
+## Leitor de aulas recuperadas — apresentação e progresso
+
+As 48 partes recuperadas estão em `data/lessons/a1/`, `data/lessons/a2/` e `data/lessons/b1/`, catalogadas em [data/course-lessons-index.json](data/course-lessons-index.json). A fonte integral de cada parte continua preservada em `raw_markdown`; não foi substituída por resumos.
+
+Ao escolher **Abrir aula original** no catálogo, o site apresenta capítulos paginados, tipografia de leitura, alternativas em cartões separados, correção contextual para gabaritos identificáveis, tradução revelável depois da correção quando o bloco puder ser extraído e retomada local por parte e capítulo. O código histórico fica em **Conferir fonte histórica**, fechado por padrão; em seções com questões, é disponibilizado após a correção para não antecipar a resposta.
+
+**Limite importante:** alguns controles criados no ChatGPT (exploradores com JavaScript, simuladores de diálogo com estado, tarefas abertas e outros componentes) ainda exigem conversão individual. O leitor não executa o JavaScript importado nem considera uma questão sem gabarito identificado como corrigida automaticamente. A página legível NÃO implica equivalência integral de todas as interações originais.
+
+Testes: `npm test` verifica o leitor com partes reais e percorre as 48 partes para detectar conteúdo técnico exibido como texto ou capítulos ausentes. Isso não substitui avaliação visual em navegador.
 
 ## O que já funciona nesta branch
 
 - Navegação pelos cinco níveis A1–C1 e pelos módulos/aulas que têm planejamento recuperado; acesso separado à Aula 01 do exemplo A0 no PDF.
-- **A0 · Unidade 01 · Aula 01 — I am / You are / He is:** exemplo original do PDF (páginas 6–10) transcrito por seção, com três chunks e explicações documentadas; acrescentamos questões, gabaritos, transformações, explorador, diálogo e escrita expressamente rotulados como prática NOVA para a versão web.\n- Uma aula-piloto adicional, explicitamente demonstrativa e não original, acessível no nível B1, com leitura em inglês, questões de compreensão e feedback por alternativa.
+- **A0 · Unidade 01 · Aula 01 — I am / You are / He is:** exemplo original do PDF (páginas 6–10) transcrito por seção, com três chunks e explicações documentadas; acrescentamos questões, gabaritos, transformações, explorador, diálogo e escrita expressamente rotulados como prática NOVA para a versão web.
+- Uma aula-piloto adicional, explicitamente demonstrativa e não original, acessível no nível B1, com leitura em inglês, questões de compreensão e feedback por alternativa.
 - Tradução revelável **somente depois de corrigir a compreensão**, explicações contextualizadas, flashcards com Errei/Difícil/Fácil, diálogo com feedback e tarefas de escrita.
 - Rascunhos, respostas e avaliações da **demonstração** salvos em `localStorage` neste navegador; exportação local das respostas escritas em JSON.
 - **Leitor privado dentro do app:** botão *Abrir acervo local* carrega um `conversations.json` ou o pacote literal de fontes escolhido no dispositivo, sem enviar o arquivo à rede nem salvá-lo no `localStorage`.
@@ -15,7 +26,7 @@ O repositório `cascaoconcurseiro/flow` continha somente `README.md` na `main` q
 - Índice A1–C1 de fontes recuperadas, mantendo separados planejamento, material histórico ainda não normalizado e demonstração técnica.
 - Empacotador privado que preserva literalmente cada página extraída das fontes, com SHA-256 por página e por documento.
 
-**Ainda não existe:** conjunto integral de aulas históricas A1–B1, banco de dados, login, sincronização entre dispositivos, calendário de spaced repetition, geração/correção por IA, áudio/avaliação oral, hospedagem privada ou publicação do app. Não chamar o piloto de aula original.
+**Ainda não existe:** equivalência completa de todas as interações históricas A1–B1, banco de dados, login, sincronização entre dispositivos, calendário de spaced repetition, geração/correção por IA, áudio/avaliação oral, hospedagem privada ou publicação do app. Não chamar o piloto de aula original.
 
 ## Executar no próprio computador
 
@@ -83,8 +94,9 @@ No protótipo, use **Abrir acervo local** para selecionar a cópia extraída de 
 
 ## Status de integridade
 
-- A0: somente o exemplo inicial da Aula 01 recuperado do PDF, não uma sequência completa de aulas.\n- A1 e A2: aulas originais do REAL ENGLISH não importadas; quantidade e títulos originais permanecem não verificados.
-- B1: 33 posições; títulos conhecidos das Partes 28–33; nenhum conteúdo integral importado no GitHub.
+- A0: somente o exemplo inicial da Aula 01 recuperado do PDF, não uma sequência completa de aulas.
+- A1 e A2: 6 e 9 partes recuperadas em arquivos JSON com texto histórico integral; a fidelidade visual e todos os controles originais ainda não foram validados.
+- B1: 33 partes recuperadas em arquivos JSON com texto histórico integral; a reprodução de todos os tipos de interação ainda não foi concluída.
 - B2 e C1: planejamento de 40 partes cada; aulas não redigidas/importadas.
 - Demonstração funcional: separada do conteúdo histórico, identificada como `technical_demo_not_original`.
 
