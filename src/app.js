@@ -1,8 +1,10 @@
+import {mountArchive} from "./archive-browser.mjs";
 const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json"};
 const STORE_KEY="real-english-technical-demo-v1";
 const root=document.getElementById("view");
 const nav=document.getElementById("level-nav");
 const status=document.getElementById("announcements");
+document.getElementById("open-private-archive").addEventListener("click",()=>{route="archive";render();document.getElementById("main").focus()});
 let curriculum=null,demo=null,level="A1",route="catalog",cardIndex=0;
 const emptyProgress=()=>({answers:{},checked:false,translation:false,grades:{},cardBack:false,dialogueIndex:0,dialogueHistory:[],writing:{},checks:{},transformations:{},shownModels:{},explorerChoice:"problem",explorerTranslation:false});
 let progress=loadProgress();
@@ -20,7 +22,7 @@ function toolbar(...nodes){return add(node("div",null,"toolbar"),...nodes)}
 function gotoDemo(){route="demo";cardIndex=0;render();document.getElementById("main").focus()}
 function gotoCatalog(next){level=next;route="catalog";render();document.getElementById("main").focus()}
 function renderNav(){nav.replaceChildren();for(const v of curriculum.volumes){const b=button(v.level,()=>gotoCatalog(v.level));b.setAttribute("aria-current",String(v.level===level));nav.append(b)}}
-function render(){renderNav();root.replaceChildren();if(route==="demo")renderDemo();else renderCatalog()}
+function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="demo")renderDemo();else renderCatalog()}
 function renderCatalog(){
 const v=curriculum.volumes.find(x=>x.level===level);const overview=panel(level+" · "+v.title);
 const count=v.planned_lesson_count===null?"Quantidade original ainda não recuperada":v.planned_lesson_count+" posições no catálogo";
