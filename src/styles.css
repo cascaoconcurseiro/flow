@@ -67,3 +67,6 @@
 .study-source-code{white-space:pre-wrap;overflow-wrap:anywhere;max-height:450px;overflow:auto;background:#f3f6f9;border-top:1px solid #dce6ef;padding:1rem;font-size:.78rem;line-height:1.65}
 .study-bottom-nav{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;margin:2rem 0 .4rem}.study-bottom-nav .btn{min-width:140px}.study-complete{border-radius:12px;background:#e5f8ee;padding:1rem;color:#246141}
 @media(max-width:700px){.study-hero,.study-chapter{border-radius:12px;padding:1rem}.study-option{padding:.8rem .65rem}.study-chapter-nav{margin-right:-1rem}.study-bottom-nav .btn{flex:1;min-width:0}.study-question{padding:.8rem}}
+
+.study-inline-title{font-size:clamp(1.15rem,2vw,1.48rem);font-weight:750;line-height:1.35;color:#17354e;margin:1.45rem 0 .65rem;overflow-wrap:anywhere}
+.study-inline-badge{display:inline-flex;max-width:100%;font-size:.75rem;font-weight:750;letter-spacing:.035em;color:#165d76;background:#e6f5fa;border:1px solid #cce7f0;border-radius:999px;padding:.3rem .7rem;margin:.5rem .35rem .6rem 0;overflow-wrap:anywhere}
