@@ -30,5 +30,8 @@ assert(new Set(right).size>=2,"Posição uniforme do gabarito na demonstração"
 assert(d.chunks.length>0&&d.chunks.every(x=>x.front&&x.back_pt&&x.function),"Flashcard incompleto");
 assert(d.dialogue.turns.length>0&&d.dialogue.turns.every(t=>t.options.length>=2&&t.options.filter(o=>o.correct).length===1&&t.options.every(o=>o.text&&o.feedback)),"Diálogo incompleto");
 assert(d.writing_tasks.length>0&&d.writing_tasks.every(w=>w.prompt&&w.suggested_criteria?.length),"Tarefa escrita incompleta");
-console.log("PASS: catálogo A1–C1 íntegro, 33 posições B1, 40 B2, 40 C1, IDs únicos, piloto com texto/tradução/questões/cards/diálogo/escrita.");
+assert(d.transformations.length>0&&d.transformations.every(t=>t.prompt&&t.model_answer&&t.explanation),"Transformações/revelações incompletas");
+assert(d.explorer?.choices.length>=2&&d.explorer.choices.every(x=>x.id&&x.english&&x.translation_pt_br&&x.note),"Explorador incompleto");
+assert(d.pronunciation?.length>0&&d.pronunciation.every(x=>x.phrase&&x.note),"Notas de pronúncia ausentes");
+console.log("PASS: catálogo A1–C1 íntegro, 33 posições B1, 40 B2, 40 C1, IDs únicos, piloto com texto/tradução/questões/transformações/explorador/cards/diálogo/escrita/pronúncia.");
 console.log("LIMITE: testes de dados não atestam importação histórica nem proficiência do aluno.");
