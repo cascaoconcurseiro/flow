@@ -1,0 +1,1230 @@
+{
+  "schema_version": "1.0.0",
+  "project": "REAL ENGLISH — Grammar Through Chunks",
+  "locale": "pt-BR",
+  "target_language": "en",
+  "purpose": "Catálogo pedagógico e navegação; não é arquivo de aulas integralmente exportadas",
+  "privacy": "Public curriculum metadata only. Never commit raw ChatGPT exports, personal responses, student data, secrets or private attachments.",
+  "content_integrity_policy": "Preserve source verbatim in private archive; generated content must be separately versioned; no fabricated titles, lesson counts, provenance, answer keys or verification.",
+  "lesson_status_vocabulary": [
+    "archive_required",
+    "source_required",
+    "identified_from_prior_summary_not_extracted",
+    "authored_in_current_conversation_not_extracted",
+    "planned_not_authored",
+    "imported_unverified",
+    "imported_verified"
+  ],
+  "activity_types": [
+    "english_first_reading",
+    "revealable_translation",
+    "diagnostic",
+    "explanation",
+    "chunk",
+    "interactive_multiple_choice",
+    "transformation",
+    "interactive_dialogue",
+    "pronunciation_note",
+    "flashcard",
+    "independent_writing",
+    "individual_correction",
+    "assessment",
+    "adaptive_review"
+  ],
+  "progression": {
+    "A1": "A2",
+    "A2": "B1",
+    "B1": "B2",
+    "B2": "C1",
+    "C1": null
+  },
+  "volumes": [
+    {
+      "level": "A1",
+      "volume": 1,
+      "title": "Foundation",
+      "planned_lesson_count": null,
+      "status": "archive_required",
+      "count_verified": false,
+      "modules": [],
+      "lesson_records": [],
+      "notes": "Número de partes, títulos e textos originais do A1 não constam integralmente no contexto atual; recuperar exportação antes de cadastrar. Não inventar aulas."
+    },
+    {
+      "level": "A2",
+      "volume": 2,
+      "title": "Elementary",
+      "planned_lesson_count": null,
+      "status": "archive_required",
+      "count_verified": false,
+      "modules": [],
+      "lesson_records": [],
+      "notes": "Número de partes, títulos e textos originais do A2 não constam integralmente no contexto atual; recuperar exportação antes de cadastrar. Não inventar aulas."
+    },
+    {
+      "level": "B1",
+      "volume": 3,
+      "title": "Intermediate",
+      "planned_lesson_count": 33,
+      "status": "partially_identified_archive_required",
+      "count_verified": true,
+      "modules": [],
+      "lesson_records": [
+        {
+          "id": "B1-V3-P01",
+          "number": 1,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P02",
+          "number": 2,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P03",
+          "number": 3,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P04",
+          "number": 4,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P05",
+          "number": 5,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P06",
+          "number": 6,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P07",
+          "number": 7,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P08",
+          "number": 8,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P09",
+          "number": 9,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P10",
+          "number": 10,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P11",
+          "number": 11,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P12",
+          "number": 12,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P13",
+          "number": 13,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P14",
+          "number": 14,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P15",
+          "number": 15,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P16",
+          "number": 16,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P17",
+          "number": 17,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P18",
+          "number": 18,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P19",
+          "number": 19,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P20",
+          "number": 20,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P21",
+          "number": 21,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P22",
+          "number": 22,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P23",
+          "number": 23,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P24",
+          "number": 24,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P25",
+          "number": 25,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P26",
+          "number": 26,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P27",
+          "number": 27,
+          "title": null,
+          "status": "source_required",
+          "source": "not_available",
+          "activity_manifest_status": "not_extracted",
+          "notes": "Título, texto integral e atividades dependem da exportação original."
+        },
+        {
+          "id": "B1-V3-P28",
+          "number": 28,
+          "title": "Defining Relative Clauses",
+          "status": "identified_from_prior_summary_not_extracted",
+          "source": "prior_conversation_summary",
+          "activity_manifest_status": "not_extracted",
+          "notes": null
+        },
+        {
+          "id": "B1-V3-P29",
+          "number": 29,
+          "title": "Second Conditional & Imaginary Situations",
+          "status": "identified_from_prior_summary_not_extracted",
+          "source": "prior_conversation_summary",
+          "activity_manifest_status": "not_extracted",
+          "notes": null
+        },
+        {
+          "id": "B1-V3-P30",
+          "number": 30,
+          "title": "Present Perfect Continuous & Duration",
+          "status": "authored_in_current_conversation_not_extracted",
+          "source": "current_conversation",
+          "activity_manifest_status": "not_extracted",
+          "notes": null
+        },
+        {
+          "id": "B1-V3-P31",
+          "number": 31,
+          "title": "Used To, Habits & Changes Over Time",
+          "status": "authored_in_current_conversation_not_extracted",
+          "source": "current_conversation",
+          "activity_manifest_status": "not_extracted",
+          "notes": null
+        },
+        {
+          "id": "B1-V3-P32",
+          "number": 32,
+          "title": "Natural B1 Communication & Vocabulary in Context",
+          "status": "authored_in_current_conversation_not_extracted",
+          "source": "current_conversation",
+          "activity_manifest_status": "not_extracted",
+          "notes": null
+        },
+        {
+          "id": "B1-V3-P33",
+          "number": 33,
+          "title": "B1 Final Review & Integrated Assessment",
+          "status": "authored_in_current_conversation_not_extracted",
+          "source": "current_conversation",
+          "activity_manifest_status": "not_extracted",
+          "notes": null
+        }
+      ],
+      "notes": "A numeração 1–33 foi informada na conversa. Este inventário não é a extração das aulas originais; as Partes 30–33 têm texto no chat atual mas ainda não estão convertidas em dados de aula."
+    },
+    {
+      "level": "B2",
+      "volume": 4,
+      "title": "Upper-Intermediate",
+      "planned_lesson_count": 40,
+      "status": "curriculum_planned_lessons_not_authored",
+      "count_verified": true,
+      "modules": [
+        {
+          "id": "B2-M01",
+          "number": 1,
+          "title": "Narrative Precision & Complex Time Reference",
+          "lessons": [
+            {
+              "id": "B2-V4-P01",
+              "number": 1,
+              "title": "B1 → B2: Baseline Assessment & Communication Goals",
+              "objective": "Diagnóstico de leitura, escrita e escolhas comunicativas; revisão pontual sem reensinar B1.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P02",
+              "number": 2,
+              "title": "Narrative Tenses & Past Perfect Continuous",
+              "objective": "Linha do tempo narrativa; anterioridade e atividade anterior a outro momento passado.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P03",
+              "number": 3,
+              "title": "Future Continuous, Future Perfect & Deadlines",
+              "objective": "Atividade futura em progresso versus resultado esperado até um prazo; reconhecer Future Perfect Continuous em contexto.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P04",
+              "number": 4,
+              "title": "Embedded Questions & Precision in Asking",
+              "objective": "Perguntas embutidas, ordem declarativa, acompanhamento e tag questions em contexto.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P05",
+              "number": 5,
+              "title": "Narrative Workshop: Timelines, Interruptions & Follow-up Questions",
+              "objective": "Relato integrado de imprevisto com cronologia e perguntas de acompanhamento.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M02",
+          "number": 2,
+          "title": "Modality, Evidence & Degrees of Certainty",
+          "lessons": [
+            {
+              "id": "B2-V4-P06",
+              "number": 6,
+              "title": "Advanced Aspect: Results, Experience & Ongoing Activity",
+              "objective": "Escolha contextual entre tempo/aspecto para experiência, processo, repetição e resultado.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P07",
+              "number": 7,
+              "title": "Modals of Deduction: Present & Past",
+              "objective": "Must/might/can't com be e have done; inferência versus comprovação.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P08",
+              "number": 8,
+              "title": "Past Modals: Regret, Criticism & Missed Opportunities",
+              "objective": "Should/could/might/would have; arrependimento, oportunidade e necessidade retrospectiva.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P09",
+              "number": 9,
+              "title": "Hedging, Stance & Qualified Claims",
+              "objective": "Ressalvas e grau de certeza em comunicação baseada em evidências.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P10",
+              "number": 10,
+              "title": "Evidence & Reporting Workshop",
+              "objective": "Separar registros, declarações, hipóteses e pendências em um resumo.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M03",
+          "number": 3,
+          "title": "Hypothetical Thinking & Alternative Outcomes",
+          "lessons": [
+            {
+              "id": "B2-V4-P11",
+              "number": 11,
+              "title": "Third Conditional & Unreal Past",
+              "objective": "Hipóteses retrospectivas e consequências imaginadas.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P12",
+              "number": 12,
+              "title": "Mixed Conditionals: Past Causes & Present Consequences",
+              "objective": "Relacionar causa passada imaginária e consequência atual, e outras linhas temporais coerentes.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P13",
+              "number": 13,
+              "title": "Wishes, Regrets & Preferences",
+              "objective": "Wish, if only, would rather, would prefer e it's time com sentido contextual.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P14",
+              "number": 14,
+              "title": "Conditional Alternatives & Advanced Patterns",
+              "objective": "Unless, as long as, provided that, even if, otherwise; inversões condicionais para reconhecimento.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P15",
+              "number": 15,
+              "title": "Decision-Making Workshop: What Could Have Happened?",
+              "objective": "Análise de alternativas, resultados reais e consequências apenas hipotéticas.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M04",
+          "number": 4,
+          "title": "Complex Sentences & Information Structure",
+          "lessons": [
+            {
+              "id": "B2-V4-P16",
+              "number": 16,
+              "title": "Advanced Relative Clauses & Reduced Relatives",
+              "objective": "Relativas reduzidas, referência e pontuação; restringir versus adicionar informação.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P17",
+              "number": 17,
+              "title": "Participle Clauses & Concise Descriptions",
+              "objective": "Cláusulas participiais, sequenciamento e sujeito compartilhado sem ambiguidade.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P18",
+              "number": 18,
+              "title": "Noun Clauses: What, Whether, That & Embedded Information",
+              "objective": "Orações nominais, what/whether/that; condição versus dúvida entre alternativas.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P19",
+              "number": 19,
+              "title": "Focus & Emphasis: Cleft Sentences",
+              "objective": "Foco informacional e construções clivadas sem alterar os fatos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P20",
+              "number": 20,
+              "title": "Complex-Sentence Workshop: Clarity, Reference & Editing",
+              "objective": "Reescrita de textos complexos com referência inequívoca.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M05",
+          "number": 5,
+          "title": "Advanced Passive, Reporting & Responsibility",
+          "lessons": [
+            {
+              "id": "B2-V4-P21",
+              "number": 21,
+              "title": "Advanced Passive Forms & Process Descriptions",
+              "objective": "Passivas contínuas, perfeitas e modais em relatórios de processos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P22",
+              "number": 22,
+              "title": "Causative HAVE & GET: Arranging for Things to Be Done",
+              "objective": "Have/get something done, agente e experiência sofrida conforme contexto.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P23",
+              "number": 23,
+              "title": "Reporting Verbs & Verb Patterns",
+              "objective": "Admit, deny, suggest, warn, promise, recommend e complementos apropriados.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P24",
+              "number": 24,
+              "title": "Impersonal Passive & Attributed Information",
+              "objective": "It is reported that e is said to; atribuição e limites das fontes.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P25",
+              "number": 25,
+              "title": "Reporting Workshop: From Messages to a Reliable Summary",
+              "objective": "Resumo profissional de datas, agentes, registros e pendências.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M06",
+          "number": 6,
+          "title": "Cohesion, Contrast & Argumentation",
+          "lessons": [
+            {
+              "id": "B2-V4-P26",
+              "number": 26,
+              "title": "Contrast & Concession",
+              "objective": "Although, despite, whereas, however; contraste versus concessão.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P27",
+              "number": 27,
+              "title": "Cause, Effect, Purpose & Consequence",
+              "objective": "Due to, therefore, so that e in order to; causa e finalidade.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P28",
+              "number": 28,
+              "title": "Advanced Comparison, Degree & Qualification",
+              "objective": "Comparações graduadas, the more...the more e critérios explícitos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P29",
+              "number": 29,
+              "title": "Reference, Cohesion & Avoiding Repetition",
+              "objective": "Substituição, referência textual e elipse sem ambiguidade.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P30",
+              "number": 30,
+              "title": "Argument Workshop: Explain, Support & Qualify a Position",
+              "objective": "Posição, critérios, objeção e conclusão proporcional às evidências.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M07",
+          "number": 7,
+          "title": "Vocabulary Depth, Register & Interaction",
+          "lessons": [
+            {
+              "id": "B2-V4-P31",
+              "number": 31,
+              "title": "Gerund & Infinitive Patterns That Change Meaning",
+              "objective": "Remember, stop, try, regret e go on com doing/to do.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P32",
+              "number": 32,
+              "title": "Phrasal Verbs & Dependent Prepositions in Real Contexts",
+              "objective": "Separabilidade, complementos e novos phrasal verbs contextualizados.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P33",
+              "number": 33,
+              "title": "Collocations, Word Formation & Register",
+              "objective": "Combinações naturais, morfologia e registro.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P34",
+              "number": 34,
+              "title": "Managing Conversations: Turn-Taking & Negotiation",
+              "objective": "Turnos, divergências, esclarecimentos e negociação de decisões.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P35",
+              "number": 35,
+              "title": "Writing Workshop: Email, Report, Review & Opinion Text",
+              "objective": "Produção guiada por gênero, público e propósito.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "B2-M08",
+          "number": 8,
+          "title": "Independent B2 Performance & Final Assessment",
+          "lessons": [
+            {
+              "id": "B2-V4-P36",
+              "number": 36,
+              "title": "Listening Strategies: Main Ideas, Detail & Speaker Attitude",
+              "objective": "Escuta genuína com áudio; ideia central, detalhes e atitude.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P37",
+              "number": 37,
+              "title": "Reading: Implication, Tone & Argument Structure",
+              "objective": "Leitura inédita com inferências sustentadas e comparação de pontos de vista.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P38",
+              "number": 38,
+              "title": "Speaking & Interaction: Extended Turns and Follow-up Questions",
+              "objective": "Produção oral real e perguntas imprevistas quando houver modalidade oral.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P39",
+              "number": 39,
+              "title": "Integrated Writing & Communication Project",
+              "objective": "Duas mensagens para públicos distintos com base no mesmo cenário.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "B2-V4-P40",
+              "number": 40,
+              "title": "B2 Final Review & Integrated Assessment",
+              "objective": "Avaliação final, diagnóstico por modalidade e encerramento do conteúdo B2.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        }
+      ],
+      "lesson_records": [],
+      "notes": "Planejamento de 40 partes definido nesta conversa; não confundir com aulas escritas."
+    },
+    {
+      "level": "C1",
+      "volume": 5,
+      "title": "Advanced",
+      "planned_lesson_count": 40,
+      "status": "curriculum_planned_lessons_not_authored",
+      "count_verified": true,
+      "modules": [
+        {
+          "id": "C1-M01",
+          "number": 1,
+          "title": "Register, Meaning & Communicative Precision",
+          "lessons": [
+            {
+              "id": "C1-V5-P01",
+              "number": 1,
+              "title": "B2 → C1: Baseline Assessment & Communication Profile",
+              "objective": "Diagnóstico inicial de nuance, registro, leitura e escrita independente.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P02",
+              "number": 2,
+              "title": "Register, Audience & Tone",
+              "objective": "Adequar linguagem coloquial, neutra, profissional e formal ao destinatário.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P03",
+              "number": 3,
+              "title": "Implied Meaning, Politeness & Pragmatic Nuance",
+              "objective": "Pressuposição, recusa indireta, polidez e implicatura contextual.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P04",
+              "number": 4,
+              "title": "Precision, Qualification & Degrees of Commitment",
+              "objective": "Certeza, impressão, evidência e compromisso assumido.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P05",
+              "number": 5,
+              "title": "Communication Workshop: Same Facts, Different Audiences",
+              "objective": "Três versões da mesma informação para diferentes públicos sem alterar os fatos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M02",
+          "number": 2,
+          "title": "Deep Reading, Listening & Inference",
+          "lessons": [
+            {
+              "id": "C1-V5-P06",
+              "number": 6,
+              "title": "Reading Between the Lines: Implication & Presupposition",
+              "objective": "Separar texto explícito, sugestão, pressuposição e inferência defensável.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P07",
+              "number": 7,
+              "title": "Authorial Stance, Tone & Rhetorical Purpose",
+              "objective": "Atitude, ressalvas, ironia contextual e propósito textual.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P08",
+              "number": 8,
+              "title": "Complex Listening: Structure, Emphasis & Attitude",
+              "objective": "Escuta real de falas longas, com hesitação, autocorreção e mudança de ênfase.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P09",
+              "number": 9,
+              "title": "Comparing Sources & Resolving Apparent Contradictions",
+              "objective": "Comparar datas, escopo e fontes; contradição versus perspectiva.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P10",
+              "number": 10,
+              "title": "Interpretation Workshop: From Detail to Defensible Inference",
+              "objective": "Síntese de textos e áudios efetivamente ouvidos com limites das conclusões.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M03",
+          "number": 3,
+          "title": "Advanced Grammar as a Tool for Meaning",
+          "lessons": [
+            {
+              "id": "C1-V5-P11",
+              "number": 11,
+              "title": "Inversion for Emphasis & Restrictive Meaning",
+              "objective": "Inversões com negative/restrictive adverbials, ênfase e registro.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P12",
+              "number": 12,
+              "title": "Fronting, Information Focus & Discourse Organization",
+              "objective": "Topicalização e foco informacional na progressão do discurso.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P13",
+              "number": 13,
+              "title": "Ellipsis, Substitution & Avoiding Ambiguity",
+              "objective": "Omissão recuperável, substituição e precisão do referente.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P14",
+              "number": 14,
+              "title": "Nominalisation & Information Density",
+              "objective": "Nominalizações úteis versus ocultação de agente e densidade excessiva.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P15",
+              "number": 15,
+              "title": "Sentence Design Workshop: Emphasis Without Obscurity",
+              "objective": "Reescrita de clareza e foco em registros diferentes.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M04",
+          "number": 4,
+          "title": "Lexical Depth, Idiomaticity & Natural Expression",
+          "lessons": [
+            {
+              "id": "C1-V5-P16",
+              "number": 16,
+              "title": "Near-Synonyms, Connotation & Semantic Precision",
+              "objective": "Intensidade, conotação, contexto e precisão entre quase sinônimos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P17",
+              "number": 17,
+              "title": "Advanced Collocations & Lexical Patterns",
+              "objective": "Restrições de combinação lexical e precisão discursiva.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P18",
+              "number": 18,
+              "title": "Idiomatic Language, Metaphor & Figurative Meaning",
+              "objective": "Sentido figurado, idioms e adequação de registro.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P19",
+              "number": 19,
+              "title": "Advanced Phrasal Verbs in Professional & Everyday Speech",
+              "objective": "Polissemia e complementação de phrasal verbs novos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P20",
+              "number": 20,
+              "title": "Lexical Choice Workshop: Natural, Precise & Appropriate",
+              "objective": "Revisão de vocabulário vago, literal ou indevidamente formal.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M05",
+          "number": 5,
+          "title": "Extended Argumentation, Synthesis & Critical Evaluation",
+          "lessons": [
+            {
+              "id": "C1-V5-P21",
+              "number": 21,
+              "title": "Building a Nuanced Argument",
+              "objective": "Tese delimitada, razões, exemplos e conclusão sustentada.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P22",
+              "number": 22,
+              "title": "Counterarguments, Concessions & Balanced Responses",
+              "objective": "Representar objeção com fidelidade e responder de modo proporcional.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P23",
+              "number": 23,
+              "title": "Evaluating Evidence & Avoiding Unsupported Conclusions",
+              "objective": "Escopo, causalidade, generalização e limites inferenciais.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P24",
+              "number": 24,
+              "title": "Synthesising Multiple Perspectives",
+              "objective": "Integrar fontes sem apenas justapor resumos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P25",
+              "number": 25,
+              "title": "Argument & Synthesis Workshop",
+              "objective": "Avaliar alternativas e produzir análise fundamentada.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M06",
+          "number": 6,
+          "title": "Extended Speaking, Interaction & Negotiation",
+          "lessons": [
+            {
+              "id": "C1-V5-P26",
+              "number": 26,
+              "title": "Extended Speaking: Organising a Response in Real Time",
+              "objective": "Produção oral estruturada e reformulação espontânea quando disponível.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P27",
+              "number": 27,
+              "title": "Turn-Taking, Interruptions & Follow-up Questions",
+              "objective": "Gerir turnos e pedir aprofundamento sem criar atrito.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P28",
+              "number": 28,
+              "title": "Disagreement, Negotiation & Conflict Resolution",
+              "objective": "Discordância adequada, critérios, concessões e acordo parcial.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P29",
+              "number": 29,
+              "title": "Responding to Unexpected Questions & Repairing Misunderstandings",
+              "objective": "Responder e reformular sob perguntas imprevistas sem inventar fatos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P30",
+              "number": 30,
+              "title": "Interaction Workshop: From Discussion to Agreement",
+              "objective": "Negociação contextual e registro de acordos e pendências.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M07",
+          "number": 7,
+          "title": "Advanced Writing & Style",
+          "lessons": [
+            {
+              "id": "C1-V5-P31",
+              "number": 31,
+              "title": "Advanced Email & Professional Correspondence",
+              "objective": "Pedidos delicados, prazos e compromissos com registro apropriado.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P32",
+              "number": 32,
+              "title": "Reports, Executive Summaries & Recommendations",
+              "objective": "Fatos, limitações, conclusões e recomendações em gêneros profissionais.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P33",
+              "number": 33,
+              "title": "Essays, Reviews & Discursive Writing",
+              "objective": "Progressão argumentativa e organização de gêneros longos.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P34",
+              "number": 34,
+              "title": "Paraphrasing, Summarising & Integrating Sources",
+              "objective": "Paráfrase fiel, síntese e atribuição das fontes.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P35",
+              "number": 35,
+              "title": "Editing Workshop: From Accurate to Effective Writing",
+              "objective": "Revisão em camadas: sentido, coesão, tom e gramática.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        },
+        {
+          "id": "C1-M08",
+          "number": 8,
+          "title": "Independent C1 Performance & Final Assessment",
+          "lessons": [
+            {
+              "id": "C1-V5-P36",
+              "number": 36,
+              "title": "Independent Reading & Listening Assessment",
+              "objective": "Leitura inédita e escuta real, com resultados separados.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P37",
+              "number": 37,
+              "title": "Independent Speaking & Interaction Assessment",
+              "objective": "Exposição e interação oral reais quando modalidade estiver disponível.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P38",
+              "number": 38,
+              "title": "Independent Writing: Two Audiences, Two Purposes",
+              "objective": "Dois textos independentes a partir de uma mesma fonte.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P39",
+              "number": 39,
+              "title": "Integrated C1 Project: Analyse, Decide & Communicate",
+              "objective": "Projeto de síntese, decisão e comunicação sob informações incompletas.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            },
+            {
+              "id": "C1-V5-P40",
+              "number": 40,
+              "title": "C1 Final Review & Integrated Assessment",
+              "objective": "Avaliação integrada e encerramento definitivo do conteúdo C1.",
+              "status": "planned_not_authored",
+              "source": "planning_in_current_conversation",
+              "activity_manifest_status": "not_available"
+            }
+          ]
+        }
+      ],
+      "lesson_records": [],
+      "notes": "Planejamento de 40 partes definido nesta conversa; não confundir com aulas escritas."
+    }
+  ]
+}
