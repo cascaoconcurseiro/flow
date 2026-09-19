@@ -4,6 +4,8 @@ const button=(text,fn,cls="btn")=>{const b=make("button",text,cls);b.type="butto
 function format(target,source){
  for(const block of source.split(/\n\s*\n/).map(s=>s.trim()).filter(Boolean)){
   const lines=block.split("\n").map(s=>s.trim()).filter(Boolean);
+  if(block.startsWith("@@TITLE@@")){target.append(make("h3",block.slice("@@TITLE@@".length).trim(),"study-inline-title"));continue}
+  if(block.startsWith("@@BADGE@@")){target.append(make("span",block.slice("@@BADGE@@".length).trim(),"study-inline-badge"));continue}
   if(lines.every(s=>/^[-•]\s/.test(s))){const ul=make("ul");for(const line of lines)ul.append(make("li",line.replace(/^[-•]\s*/,"")));target.append(ul);continue}
   if(lines.every(s=>s.includes("  |  "))){const box=make("div",null,"study-table");for(const line of lines)box.append(make("div",line,"study-table-row"));target.append(box);continue}
   const p=make("p",null,/^(CHUNK|FRENTE|VERSO|AFIRMAÇÃO|PERGUNTA|NEGAÇÃO)/i.test(block)?"study-callout":"study-paragraph");
