@@ -21,9 +21,10 @@ export function parseHistoricalLesson(raw){
  for(const line of lines){
   const from=offset;offset+=line.length+1;const s=line.trim();
   if(s.startsWith("{@body")||s.startsWith("{@module"))continue;
-  if(/\{#(?:if|each|await)\b/.test(s)){skip++;continue}
-  if(/\{\/(?:if|each|await)\}/.test(s)){skip=Math.max(0,skip-1);continue}
-  if(skip>0||/^\{:(?:else|then|catch)\b/.test(s))continue;
+  const opened=(s.match(/\{#(?:if|each|await)\b/g)||[]).length;
+  const closed=(s.match(/\{\/(?:if|each|await)\}/g)||[]).length;
+  if(opened||closed||skip>0){skip=Math.max(0,skip+opened-closed);continue}
+  if(/^\{:(?:else|then|catch)\b/.test(s))continue;
   if(qs.some(q=>from>=q.offset&&from<q.end))continue;
   if(/^<\/?(?:radio-group|radio|button|checkbox|textarea|input|select|slider|segmented-control|date-picker|pressable|popover|WritingBlock|AppBlock)\b/i.test(s))continue;
   if(!s)continue;
