@@ -78,7 +78,7 @@ Após a auditoria inicial, foi criado **código novo de demonstração**, separa
 | Item implementado | Escopo comprovável no código |
 |---|---|
 | `index.html`, `src/app.js`, `src/styles.css` | UI responsiva com navegação A1–C1 e abertura de **um piloto técnico** no B1. |
-| `data/demo-lesson.json` | Um texto fictício e tradução revelável após correção, 4 questões com gabaritos/feedback, 4 chunks/cards, 3 turnos de diálogo e 2 tarefas de escrita. **Não é a aula original completa B1 Parte 32.** |
+| `data/demo-lesson.json` | Um texto fictício e tradução revelável após correção, 4 questões com gabaritos/feedback, 2 transformações com respostas reveláveis, um explorador de estratégias, 4 chunks/cards, 3 turnos de diálogo, 2 tarefas de escrita e notas de pronúncia (sem áudio). **Não é a aula original completa B1 Parte 32.** |
 | `localStorage` | Guarda respostas, revisão de cards, histórico de demonstração e rascunhos neste navegador. Não é login, sincronização, backup nem armazenamento seguro multiusuário. |
 | Exportação de respostas do piloto | Salva um JSON local com respostas escritas; não oferece avaliação por IA. |
 | `scripts/import-chatgpt-export.mjs` | Arquiva **objetos integrais das conversas selecionadas por ID** em pasta privada, com hash e manifesto; exige o `conversations.json` original para executar. Não é ainda o extrator estruturado de aulas e não recupera estados efêmeros dos widgets. |
