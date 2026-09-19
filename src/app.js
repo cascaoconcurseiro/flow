@@ -4,7 +4,7 @@ const root=document.getElementById("view");
 const nav=document.getElementById("level-nav");
 const status=document.getElementById("announcements");
 let curriculum=null,demo=null,level="A1",route="catalog",cardIndex=0;
-const emptyProgress=()=>({answers:{},checked:false,translation:false,grades:{},cardBack:false,dialogueIndex:0,dialogueHistory:[],writing:{},checks:{}});
+const emptyProgress=()=>({answers:{},checked:false,translation:false,grades:{},cardBack:false,dialogueIndex:0,dialogueHistory:[],writing:{},checks:{},transformations:{},shownModels:{},explorerChoice:"problem",explorerTranslation:false});
 let progress=loadProgress();
 function loadProgress(){try{return {...emptyProgress(),...JSON.parse(localStorage.getItem(STORE_KEY)||"{}")}}catch{return emptyProgress()}}
 function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify(progress))}catch{announce("Não foi possível salvar o progresso neste navegador.")}}
@@ -34,7 +34,7 @@ for(const m of v.modules){const d=node("details",null,"module");d.append(node("s
 function renderDemo(){
 const heading=panel(demo.title);heading.append(pill("PILOTO · NÃO É O ORIGINAL","warning"),para(demo.subtitle),toolbar(button("← Voltar ao currículo",()=>gotoCatalog("B1"))));root.append(heading);
 const intro=panel("Objetivos");for(const objective of demo.objectives)intro.append(para("• "+objective));root.append(intro);
-renderReading();renderExplanation();renderCards();renderDialogue();renderWriting();renderReview();
+renderReading();renderExplanation();renderTransformations();renderExplorer();renderCards();renderDialogue();renderWriting();renderPronunciation();renderReview();
 }
 function renderReading(){
 const r=demo.reading,p=panel("1 · Reading first: "+r.title);
@@ -49,8 +49,34 @@ const actions=toolbar(button("Corrigir compreensão",()=>{progress.checked=true;
 if(progress.checked){const points=r.questions.filter(q=>progress.answers[q.id]===q.correct_option_id).length;p.append(para("Resultado de compreensão escrita: "+points+"/"+r.questions.length+". Este teste não avalia escuta ou fala.","status"));p.append(button(progress.translation?"Ocultar tradução":"Revelar tradução",()=>{progress.translation=!progress.translation;save();render()},"btn secondary"));if(progress.translation)p.append(para(r.translation_pt_br,"reading"))}
 root.append(p)}
 function renderExplanation(){const p=panel("2 · Explicações e contrastes");for(const item of demo.explanation){const x=node("div",null,"tile");x.append(node("h3",item.title),para(item.body));p.append(x)}root.append(p)}
+function renderTransformations(){
+ const p=panel("3 · Transformações com respostas reveláveis");
+ p.append(para("Escreva sua versão antes de revelar o modelo. Respostas diferentes podem ser igualmente naturais; a comparação aqui é sua, não uma correção automática.","muted"));
+ for(const task of demo.transformations){
+  const box=node("div",null,"exercise");box.append(node("h3",task.prompt));
+  const field=node("textarea",null,"input-area");field.setAttribute("aria-label",task.prompt);field.value=progress.transformations?.[task.id]||"";field.addEventListener("input",()=>{progress.transformations??={};progress.transformations[task.id]=field.value;save()});box.append(field);
+  const shown=!!progress.shownModels?.[task.id];box.append(button(shown?"Ocultar modelo":"Revelar modelo e explicação",()=>{progress.shownModels??={};progress.shownModels[task.id]=!shown;save();render()},"btn secondary"));
+  if(shown)box.append(add(node("div",null,"feedback"),para("Resposta-modelo: "+task.model_answer),para(task.explanation)));p.append(box)
+ }
+ root.append(p)}
+function renderExplorer(){
+ const data=demo.explorer,p=panel("4 · Explorador: "+data.title),label=node("label","Escolha a necessidade comunicativa","status"),select=node("select",null,"btn");
+ select.setAttribute("aria-label","Necessidade comunicativa");
+ for(const item of data.choices){const opt=node("option",item.label);opt.value=item.id;select.append(opt)}
+ select.value=progress.explorerChoice||data.choices[0].id;
+ select.addEventListener("change",()=>{progress.explorerChoice=select.value;progress.explorerTranslation=false;save();render()});
+ const active=data.choices.find(x=>x.id===select.value)||data.choices[0],sample=node("div",null,"tile");
+ sample.append(node("h3",active.english),para(active.note,"muted"));
+ if(progress.explorerTranslation)sample.append(para(active.translation_pt_br));
+ p.append(label,select,sample,button(progress.explorerTranslation?"Ocultar tradução":"Revelar tradução",()=>{progress.explorerTranslation=!progress.explorerTranslation;save();render()},"btn secondary"));
+ root.append(p)}
+function renderPronunciation(){
+ const p=panel("8 · Pronúncia conectada: notas de estudo");
+ p.append(para("Estas notas ajudam a reconhecer os chunks. Não há áudio integrado nesta demonstração e a leitura delas não permite avaliar pronúncia nem escuta.","muted"));
+ for(const item of demo.pronunciation){const box=node("div",null,"tile");box.append(node("h3",item.phrase),para(item.note));p.append(box)}
+ root.append(p)}
 function renderCards(){
-const p=panel("3 · Flashcards com autoavaliação"),c=demo.chunks[cardIndex];p.append(para("Frente em inglês. Tente compreender antes de virar o card.","muted"));
+const p=panel("5 · Flashcards com autoavaliação"),c=demo.chunks[cardIndex];p.append(para("Frente em inglês. Tente compreender antes de virar o card.","muted"));
 p.append(pill("Card "+(cardIndex+1)+"/"+demo.chunks.length));
 const face=node("div",null,"flashcard");face.append(node("strong",c.front));if(progress.cardBack){face.append(para(c.back_pt),para(c.function,"muted"),para(c.usage,"muted"))}else face.append(para("Tente identificar o sentido e a função do chunk.","muted"));p.append(face);
 p.append(toolbar(button(progress.cardBack?"Ocultar verso":"Revelar verso",()=>{progress.cardBack=!progress.cardBack;save();render()},"btn primary"),
@@ -59,19 +85,19 @@ button("Próximo →",()=>{cardIndex=Math.min(demo.chunks.length-1,cardIndex+1);
 if(progress.cardBack){const actions=toolbar();for(const grade of ["Errei","Difícil","Fácil"]){actions.append(button(grade,()=>{progress.grades[c.id]=grade;cardIndex=Math.min(cardIndex+1,demo.chunks.length-1);progress.cardBack=false;save();render();announce("Card avaliado como "+grade+".")},"btn small"))}p.append(actions)}
 p.append(para("Avaliados: "+Object.keys(progress.grades).length+"/"+demo.chunks.length+" · Errei: "+Object.values(progress.grades).filter(v=>v==="Errei").length+" · Difícil: "+Object.values(progress.grades).filter(v=>v==="Difícil").length,"subtle muted"));root.append(p)}
 function renderDialogue(){
-const d=demo.dialogue,p=panel("4 · Diálogo interativo: "+d.title);p.append(para("Escolha a próxima fala em inglês. O diálogo é linear, com feedback por opção.","muted"));
+const d=demo.dialogue,p=panel("6 · Diálogo interativo: "+d.title);p.append(para("Escolha a próxima fala em inglês. O diálogo é linear, com feedback por opção.","muted"));
 for(const [i,h] of progress.dialogueHistory.entries()){const item=node("div",null,"dialogue-turn");item.append(para((i+1)+". "+h.prompt),para("YOU: "+h.response),pill(h.correct?"Escolha adequada":"Precisa de revisão",h.correct?"good":"warning"),para(h.feedback,"muted"));p.append(item)}
 const t=d.turns[progress.dialogueIndex];if(t){p.append(node("h3",(progress.dialogueIndex+1)+". "+t.speaker+": "+t.prompt));for(const o of t.options)p.append(button(o.text,()=>{progress.dialogueHistory.push({prompt:t.prompt,response:o.text,feedback:o.feedback,correct:o.correct});progress.dialogueIndex++;save();render();announce(o.feedback)},"btn full"))}else{const points=progress.dialogueHistory.filter(h=>h.correct).length;p.append(para("Diálogo finalizado: "+points+"/"+d.turns.length+" respostas adequadas ao cenário. Agora tente reconstruir a conversa sem alternativas.","status"))}
 p.append(toolbar(button("Reiniciar diálogo",()=>{progress.dialogueIndex=0;progress.dialogueHistory=[];save();render()},"btn small")));root.append(p)}
 function renderWriting(){
-const p=panel("5 · Produção escrita independente");p.append(para("As respostas ficam neste navegador. A correção por IA ainda não foi integrada: o aplicativo não inventará feedback para texto livre.","notice"));
+const p=panel("7 · Produção escrita independente");p.append(para("As respostas ficam neste navegador. A correção por IA ainda não foi integrada: o aplicativo não inventará feedback para texto livre.","notice"));
 for(const task of demo.writing_tasks){const box=node("div",null,"exercise");box.append(node("h3",task.title),para(task.prompt));const area=node("textarea",null,"input-area");area.value=progress.writing[task.id]||"";area.setAttribute("aria-label",task.title);area.placeholder="Write your answer in English…";const counter=para(wordCount(area.value)+" palavras","muted subtle");area.addEventListener("input",()=>{progress.writing[task.id]=area.value;counter.textContent=wordCount(area.value)+" palavras";save()});box.append(area,counter,para("Critérios: "+task.suggested_criteria.join("; ")+".","muted subtle"));p.append(box)}
 p.append(button("Exportar minhas respostas em JSON",()=>{const contents={export_type:"real_english_demo_writing",lesson_id:demo.id,created_at:new Date().toISOString(),answers:demo.writing_tasks.map(t=>({task_id:t.id,prompt:t.prompt,answer:progress.writing[t.id]||""}))};downloadJson("real-english-minhas-respostas.json",contents);announce("Arquivo de respostas criado localmente.")},"btn secondary"));
 p.append(para("O arquivo exportado contém somente as respostas da demonstração. A decisão de compartilhar esse material com qualquer serviço externo é sua.","subtle muted"));root.append(p)}
 function wordCount(s){return s.trim()?s.trim().split(/\s+/).length:0}
 function downloadJson(filename,value){const file=new Blob([JSON.stringify(value,null,2)],{type:"application/json;charset=utf-8"}),url=URL.createObjectURL(file),a=node("a");a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}
 function renderReview(){
-const p=panel("6 · Autoavaliação e revisão direcionada");
+const p=panel("9 · Autoavaliação e revisão direcionada");
 for(const [i,goal] of demo.objectives.entries()){const lab=node("label",null,"option"),c=node("input");c.type="checkbox";c.checked=!!progress.checks[i];c.addEventListener("change",()=>{progress.checks[i]=c.checked;save()});lab.append(c,node("span",goal));p.append(lab)}
 const misses=demo.reading.questions.filter(q=>progress.checked&&progress.answers[q.id]!==q.correct_option_id).map(q=>q.explanation);
 if(progress.checked)p.append(para(misses.length?"Revise estes contrastes: "+misses.join(" "):"Questões de leitura corretas. Confirme a habilidade na escrita independente.","muted"));
