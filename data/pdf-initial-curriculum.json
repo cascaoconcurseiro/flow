@@ -305,5 +305,67 @@
         "Should I have told her?"
       ]
     ]
+  },
+  "introduction": {
+    "source_pages": [
+      1,
+      2
+    ],
+    "method": "Grammar Through Chunks: combinar organização e profundidade gramatical com frases reais e situações comunicativas; compreender e praticar famílias de chunks antes de expandir a estrutura.",
+    "example_family": [
+      [
+        "I've never been to London.",
+        "Eu nunca estive em Londres."
+      ],
+      [
+        "Have you ever been there?",
+        "Você já esteve lá?"
+      ],
+      [
+        "I've been there twice.",
+        "Eu já estive lá duas vezes."
+      ],
+      [
+        "I haven't been there yet.",
+        "Eu ainda não estive lá."
+      ],
+      [
+        "Have you ever been to Brazil?",
+        "Você já esteve no Brasil?"
+      ],
+      [
+        "Have you ever been to Japan?",
+        "Você já esteve no Japão?"
+      ],
+      [
+        "Have you ever been abroad?",
+        "Você já esteve no exterior."
+      ]
+    ]
+  },
+  "program_modules": {
+    "source_pages": [
+      12
+    ],
+    "note": "Seis botões de navegação do índice inicial do PDF; esta é uma proposta de tópicos, não seis aulas prontas.",
+    "labels": [
+      "Fundamentos",
+      "Rotinas e ações",
+      "Passado e futuro",
+      "Experiências e obrigação",
+      "Construções intermediárias",
+      "Precisão e estruturas complexas"
+    ]
+  },
+  "modal_can_note": {
+    "source_page": 6,
+    "explanation": "O modal CAN não tem futuro próprio na forma 'will can'; a proposta usa 'will be able to' como alternativa contextual."
+  },
+  "modal_should_note": {
+    "source_pages": [
+      13,
+      14
+    ],
+    "explanation": "O PDF propõe contrastar should do, should be doing e should have done com MUST, HAVE TO, OUGHT TO e HAD BETTER; o trecho é uma proposta didática, não a aula completa desses modais."
   }
 }
