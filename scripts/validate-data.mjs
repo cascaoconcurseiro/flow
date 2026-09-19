@@ -33,5 +33,18 @@ assert(d.writing_tasks.length>0&&d.writing_tasks.every(w=>w.prompt&&w.suggested_
 assert(d.transformations.length>0&&d.transformations.every(t=>t.prompt&&t.model_answer&&t.explanation),"Transformações/revelações incompletas");
 assert(d.explorer?.choices.length>=2&&d.explorer.choices.every(x=>x.id&&x.english&&x.translation_pt_br&&x.note),"Explorador incompleto");
 assert(d.pronunciation?.length>0&&d.pronunciation.every(x=>x.phrase&&x.note),"Notas de pronúncia ausentes");
+const pdf=read("data/pdf-a0-aula-01.json"),plan=read("data/pdf-initial-curriculum.json");
+assert(pdf.id==="PDF-A0-U01-A01"&&pdf.level==="A0"&&pdf.source_status==="pdf_original_example_with_new_interactions","Aula PDF deve preservar o estado de EXEMPLO A0, não A1 original completo");
+assert(pdf.source.total_pages===526&&pdf.source.lesson_pages.join(",")==="6,7,8,9,10","Proveniência do PDF inválida");
+assert(pdf.sourceSections.length===5&&pdf.sourceSections.every((s,i)=>s.page===i+6&&s.lines.length>0),"Transcrição das cinco páginas da aula ausente");
+assert(pdf.sourceSections[0].lines.includes("A0 • Unidade 01 • Aula 01")&&pdf.sourceSections[0].lines.includes("I'm from Brazil."),"Início real da aula não preservado");
+assert(pdf.sourceSections.some(s=>s.lines.includes("Yes, I am. / No, I'm not.")),"Respostas curtas originais ausentes");
+assert(pdf.reading.translation_policy==="after_comprehension_submission"&&pdf.reading.questions.length===4,"Interação de compreensão PDF inválida");
+assert(new Set(pdf.reading.questions.map(q=>q.options.findIndex(o=>o.id===q.correct_option_id))).size>1,"Alternativas PDF não distribuem posições de gabarito");
+assert(pdf.chunks.length===3&&pdf.chunks.every(c=>c.front&&c.back_pt&&c.function),"Chunks PDF incompletos");
+assert(pdf.transformations.length===2&&pdf.dialogue.turns.length===2&&pdf.writing_tasks.length===1,"Interações NOVAS do PDF devem ser identificadas e completas");
+assert(plan.levels.map(x=>x.level).join(",")==="A0,A1,A2,B1,B2"&&plan.to_be_map.chapters.length===12&&plan.lesson_stages.items.length===8,"Planejamento inicial do PDF incompleto");
+assert(plan.initial_b2_topics.items.length===12,"Índice inicial B2 no PDF incompleto");
+console.log("PASS: PDF auditado — Aula 01 é EXEMPLO A0 com transcrição pp. 6–10, 3 chunks, 4 questões NOVAS, 12 tópicos iniciais B2 e 8 etapas.");
 console.log("PASS: catálogo A1–C1 íntegro, 33 posições B1, 40 B2, 40 C1, IDs únicos, piloto com texto/tradução/questões/transformações/explorador/cards/diálogo/escrita/pronúncia.");
 console.log("LIMITE: testes de dados não atestam importação histórica nem proficiência do aluno.");
