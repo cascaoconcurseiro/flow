@@ -1,0 +1,423 @@
+{
+  "id": "PDF-A0-U01-A01",
+  "related_curriculum_lesson_id": null,
+  "source_status": "pdf_original_example_with_new_interactions",
+  "title": "Aula 01 — I am / You are / He is",
+  "subtitle": "A0 · Unidade 01 · Aula 01 · material originalmente apresentado como EXEMPLO de aula no PDF, páginas 6–10.",
+  "level": "A0",
+  "source": {
+    "filename": "Curso de Gramática por Chunks.pdf",
+    "total_pages": 526,
+    "lesson_pages": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "source_type": "chat_print_to_pdf",
+    "pdf_embedded_interactive_state": false,
+    "original_presentation": "example_lesson_not_verified_complete_volume",
+    "page_review_status": "text_extracted_and_cross_checked_with_page_image"
+  },
+  "objectives": [
+    "Apresentar sua origem com I'm from… e perguntar Are you from…?",
+    "Responder afirmativamente ou negativamente e combinar o TO BE com outros sujeitos.",
+    "Reconhecer as mudanças de pergunta, negativa e resposta sem inventar tempos verbais no A0."
+  ],
+  "reading": {
+    "id": "pdf-source-reading",
+    "title": "Primeiros chunks do PDF (trecho original)",
+    "english": "I'm from Brazil.\nAre you from Brazil?\nYes, I am. / No, I'm not.",
+    "translation_pt_br": "Sou do Brasil.\nVocê é do Brasil?\nSim, sou. / Não, não sou.",
+    "translation_policy": "after_comprehension_submission",
+    "questions": [
+      {
+        "id": "pdfq1",
+        "stem": "Which sentence asks about someone's origin?",
+        "options": [
+          {
+            "id": "a",
+            "text": "I'm from Brazil."
+          },
+          {
+            "id": "b",
+            "text": "Are you from Brazil?"
+          },
+          {
+            "id": "c",
+            "text": "Yes, I am."
+          }
+        ],
+        "correct_option_id": "b",
+        "explanation": "Are you from Brazil? is the question. A explicação e a prática são novas, criadas para tornar interativo o exemplo das páginas 6–8."
+      },
+      {
+        "id": "pdfq2",
+        "stem": "Which is the natural short affirmative answer to 'Are you Brazilian?'",
+        "options": [
+          {
+            "id": "a",
+            "text": "Yes, I am."
+          },
+          {
+            "id": "b",
+            "text": "Yes, I'm."
+          },
+          {
+            "id": "c",
+            "text": "Yes, I be."
+          }
+        ],
+        "correct_option_id": "a",
+        "explanation": "O texto da página 8 destaca Yes, I am. como resposta curta afirmativa."
+      },
+      {
+        "id": "pdfq3",
+        "stem": "How do you say 'Eu não estou pronto'?",
+        "options": [
+          {
+            "id": "a",
+            "text": "I'm ready."
+          },
+          {
+            "id": "b",
+            "text": "Are you ready?"
+          },
+          {
+            "id": "c",
+            "text": "I'm not ready."
+          }
+        ],
+        "correct_option_id": "c",
+        "explanation": "I'm not ready. é a negativa registrada na página 8."
+      },
+      {
+        "id": "pdfq4",
+        "stem": "Which question refers to THEY?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Are they ready?"
+          },
+          {
+            "id": "b",
+            "text": "Is he ready?"
+          },
+          {
+            "id": "c",
+            "text": "Is she ready?"
+          }
+        ],
+        "correct_option_id": "a",
+        "explanation": "Are they ready? aparece na página 9; o sujeito THEY usa ARE."
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "id": "pdfchunk1",
+      "front": "I'm from Brazil.",
+      "back_pt": "Eu sou do Brasil.",
+      "function": "Afirmar origem; I'm = I am.",
+      "usage": "Pronúncia aproximada indicada no PDF: aim frâm brâ-zíl. Páginas 6–7."
+    },
+    {
+      "id": "pdfchunk2",
+      "front": "Are you from Brazil?",
+      "back_pt": "Você é do Brasil?",
+      "function": "Perguntar pela origem: ARE + YOU + FROM...",
+      "usage": "Pronúncia aproximada indicada no PDF: ár iú frâm brâ-zíl? Página 7."
+    },
+    {
+      "id": "pdfchunk3",
+      "front": "Yes, I am. / No, I'm not.",
+      "back_pt": "Sim, sou. / Não, não sou.",
+      "function": "Respostas curtas com TO BE.",
+      "usage": "O original enfatiza Yes, I am. em vez de Yes, I'm. Páginas 7–8."
+    }
+  ],
+  "explanation": [
+    {
+      "title": "I'm = I am",
+      "body": "I'm = I am = Eu sou / Eu estou. From indica origem. O PDF exemplifica I'm from Portugal, I'm from a small town e I'm originally from Brazil. (p. 7)"
+    },
+    {
+      "title": "Pergunta: are antes de you",
+      "body": "You are from Brazil. torna-se Are you from Brazil? Também aparecem Are you from here?, Are you from São Paulo? e Are you Brazilian? (p. 7)"
+    },
+    {
+      "title": "Resposta curta",
+      "body": "Are you Brazilian? — Yes, I am. / No, I'm not. O PDF observa que Yes, I'm não funciona como resposta curta afirmativa independente. (p. 8)"
+    },
+    {
+      "title": "Afirmação, pergunta, negação",
+      "body": "I'm ready. / Are you ready? / I'm not ready. O PDF também contrasta Eu tenho 40 anos com I'm 40 years old. (p. 8)"
+    },
+    {
+      "title": "Outros sujeitos",
+      "body": "I'm ready. / You're ready. / He's ready. / She's ready. / It's ready. / We're ready. / They're ready. Perguntas do PDF: Is he ready? Is she ready? Are they ready? (p. 9)"
+    },
+    {
+      "title": "Tempo passado e futuro são assunto de aulas posteriores",
+      "body": "O PDF introduz a intenção pedagógica de revisar TO BE em outros tempos futuramente, e menciona I'll be at home / I'm going to be at home; não apresenta uma aula completa de passado e futuro dentro da Aula 01. (p. 10)"
+    }
+  ],
+  "sourceSections": [
+    {
+      "page": 6,
+      "heading": "A0 • Unidade 01 • Aula 01",
+      "lines": [
+        "I am / You are / He is",
+        "Aprenda a se apresentar, descrever pessoas e fazer perguntas sobre identidade, origem e profissão.",
+        "Afirmação · Negação · Perguntas · Respostas · Conversação",
+        "Parte 1 — Aprenda os primeiros chunks",
+        "CHUNK 01",
+        "I'm from Brazil.",
+        "Eu sou do Brasil.",
+        "Pronúncia aproximada: aim frâm brâ-zíl."
+      ]
+    },
+    {
+      "page": 7,
+      "heading": "CHUNK 01 / CHUNK 02 / CHUNK 03",
+      "lines": [
+        "Entenda a estrutura",
+        "I'm = I am = Eu sou / Eu estou.",
+        "From = de, indicando origem.",
+        "Brazil = Brasil.",
+        "A estrutura I'm from... permite dizer de onde você é.",
+        "I'm from Brazil. — Sou do Brasil.",
+        "I'm from Portugal. — Sou de Portugal.",
+        "I'm from a small town. — Sou de uma cidade pequena.",
+        "I'm originally from Brazil. — Sou originalmente do Brasil.",
+        "Chunk principal para memorizar: I'm from...",
+        "CHUNK 02",
+        "Are you from Brazil?",
+        "Você é do Brasil?",
+        "Pronúncia aproximada: ár iú frâm brâ-zíl?",
+        "Entenda a estrutura",
+        "Você já aprendeu a afirmar:",
+        "You are from Brazil. — Você é do Brasil.",
+        "Para transformar essa frase em uma pergunta, colocamos ARE antes de YOU:",
+        "Are you from Brazil? — Você é do Brasil?",
+        "Are you from Brazil? — Você é do Brasil?",
+        "Are you from here? — Você é daqui?",
+        "Are you from São Paulo? — Você é de São Paulo?",
+        "Are you Brazilian? — Você é brasileiro?",
+        "Chunk principal: Are you from...?",
+        "CHUNK 03",
+        "Yes, I am. / No, I'm not."
+      ]
+    },
+    {
+      "page": 8,
+      "heading": "Respostas e situações",
+      "lines": [
+        "Sim, sou. / Não, não sou.",
+        "Entenda a estrutura",
+        "Ao responder a uma pergunta com TO BE, usamos o próprio verbo na resposta curta.",
+        "Are you Brazilian?",
+        "Você é brasileiro?",
+        "Yes, I am. — Sim, sou.",
+        "No, I'm not. — Não, não sou.",
+        "Yes, I'm Brazilian. — Sim, sou brasileiro.",
+        "Observe que a resposta curta afirmativa é \"Yes, I am\", não \"Yes, I'm\". Já na resposta negativa, \"No, I'm not\" é natural e correto.",
+        "Parte 2 — Aprenda a mesma estrutura em diferentes situações",
+        "Agora que você conhece os chunks iniciais, vamos expandir o uso de TO BE.",
+        "Explore os contextos",
+        "Afirmação",
+        "I'm ready.",
+        "Eu estou pronto.",
+        "Pergunta",
+        "Are you ready?",
+        "Você está pronto?",
+        "Negação",
+        "I'm not ready.",
+        "Eu não estou pronto.",
+        "Observe a diferença entre o inglês e o português no exemplo da idade.",
+        "Em português, você diz \"Eu tenho 40 anos\", utilizando o verbo TER. Em inglês, utiliza o TO BE: I'm 40 years old.",
+        "Identidade · Profissão · Localização · Estado físico · Idade · Preparação"
+      ]
+    },
+    {
+      "page": 9,
+      "heading": "Parte 3 — Outros sujeitos",
+      "lines": [
+        "Esse tipo de observação estará presente ao longo do curso para evitar traduções literais incorretas.",
+        "Parte 3 — Aprenda a utilizar HE, SHE, IT, WE e THEY",
+        "Depois de dominar os primeiros chunks com I e YOU, você aprenderia a expandir as estruturas para falar sobre outras pessoas e coisas.",
+        "Pessoa · Afirmação",
+        "I · I'm ready.",
+        "You · You're ready.",
+        "He · He's ready.",
+        "She · She's ready.",
+        "It · It's ready.",
+        "We · We're ready.",
+        "They · They're ready.",
+        "Ready = pronto(a). O significado muda de acordo com a pessoa, mas o padrão permanece.",
+        "Em seguida, aprenderia as perguntas e as respostas correspondentes:",
+        "Is he ready?",
+        "Ele está pronto?",
+        "Yes, he is. — Sim, está.",
+        "No, he isn't. — Não, não está.",
+        "Is she ready?",
+        "Ela está pronta?",
+        "Yes, she is. — Sim, está.",
+        "No, she isn't. — Não, não está.",
+        "Are they ready?",
+        "Eles estão prontos?",
+        "Yes, they are. — Sim, estão.",
+        "No, they aren't. — Não, não estão."
+      ]
+    },
+    {
+      "page": 10,
+      "heading": "Parte 4 — Continuidade planejada",
+      "lines": [
+        "Perceba que a abordagem é cumulativa: você aprende uma estrutura, pratica com diferentes sujeitos, transforma em pergunta e treina respostas reais.",
+        "Parte 4 — Expandindo o TO BE para passado e futuro",
+        "Aqui está a aplicação da sua ideia sobre aprender a estrutura em diferentes tempos verbais.",
+        "Em uma aula posterior, depois de dominar o TO BE no presente, estudaríamos os seguintes padrões:",
+        "Uma ideia, três tempos verbais",
+        "Afirmação",
+        "I'm at home.",
+        "Estou em casa.",
+        "Pergunta",
+        "Are you at home?",
+        "Você está em casa?",
+        "Negação",
+        "I'm not at home.",
+        "Não estou em casa.",
+        "Resposta curta",
+        "Yes, I am. / No, I'm not.",
+        "Padrão para memorizar: I'm / Are you / I'm not",
+        "Com esse modelo, seria possível estudar uma única ideia comunicativa e aprender a expressá-la no presente, no passado e no futuro.",
+        "O curso também mostraria como escolher a estrutura adequada ao contexto. Por exemplo, I'll be at home pode expressar uma previsão ou uma decisão, enquanto I'm going to be at home pode apresentar um plano ou expectativa baseada na situação.",
+        "Presente · Passado · Futuro"
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "id": "pdftr1",
+      "prompt": "Escreva a forma interrogativa de 'You are ready.'",
+      "model_answer": "Are you ready?",
+      "explanation": "Inverta ARE e YOU. Exercício NOVO, baseado no contraste que já aparece na página 8."
+    },
+    {
+      "id": "pdftr2",
+      "prompt": "Escreva a resposta curta afirmativa para 'Are you Brazilian?'",
+      "model_answer": "Yes, I am.",
+      "explanation": "Não use Yes, I'm isoladamente. Exercício NOVO baseado na página 8."
+    }
+  ],
+  "explorer": {
+    "title": "Explore os contextos com TO BE",
+    "choices": [
+      {
+        "id": "a",
+        "label": "Afirmação",
+        "english": "I'm ready.",
+        "translation_pt_br": "Eu estou pronto.",
+        "note": "PDF p. 8: afirmação com I am / I'm."
+      },
+      {
+        "id": "q",
+        "label": "Pergunta",
+        "english": "Are you ready?",
+        "translation_pt_br": "Você está pronto?",
+        "note": "PDF p. 8: ARE antes de YOU."
+      },
+      {
+        "id": "n",
+        "label": "Negação",
+        "english": "I'm not ready.",
+        "translation_pt_br": "Eu não estou pronto.",
+        "note": "PDF p. 8: NOT depois de AM."
+      },
+      {
+        "id": "r",
+        "label": "Resposta curta",
+        "english": "Yes, I am. / No, I'm not.",
+        "translation_pt_br": "Sim, sou. / Não, não sou.",
+        "note": "PDF pp. 7–8: contração negativa possível, afirmativa independente não."
+      },
+      {
+        "id": "h",
+        "label": "Falar de outra pessoa",
+        "english": "Is he ready?",
+        "translation_pt_br": "Ele está pronto?",
+        "note": "PDF p. 9: HE usa IS."
+      }
+    ]
+  },
+  "dialogue": {
+    "id": "pdf-dialogue-added",
+    "title": "Treino NOVO com chunks do PDF",
+    "turns": [
+      {
+        "id": "d1",
+        "speaker": "Emma",
+        "prompt": "Are you from Brazil?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Yes, I am.",
+            "feedback": "Resposta curta natural presente no PDF (p. 8).",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Yes, I'm.",
+            "feedback": "O PDF explica que a resposta curta afirmativa isolada é Yes, I am.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "d2",
+        "speaker": "Emma",
+        "prompt": "Are they ready?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Yes, he is.",
+            "feedback": "HE não corresponde a THEY.",
+            "correct": false
+          },
+          {
+            "id": "b",
+            "text": "Yes, they are.",
+            "feedback": "Resposta do PDF para Are they ready? (p. 9).",
+            "correct": true
+          }
+        ]
+      }
+    ]
+  },
+  "writing_tasks": [
+    {
+      "id": "pdfw1",
+      "title": "Sua apresentação",
+      "prompt": "Escreva 4 frases em inglês: sua origem, uma pergunta sobre origem de outra pessoa, como você está hoje e uma pergunta com ARE YOU. Não inclua informações pessoais que não queira registrar neste navegador.",
+      "suggested_criteria": [
+        "I'm from...",
+        "Are you from...?",
+        "I'm...",
+        "Are you...?"
+      ]
+    }
+  ],
+  "pronunciation": [
+    {
+      "phrase": "I'm from Brazil.",
+      "note": "O PDF indica a aproximação 'aim frâm brâ-zíl' (p. 6). É apenas aproximação escrita, não áudio de pronúncia."
+    },
+    {
+      "phrase": "Are you from Brazil?",
+      "note": "O PDF indica 'ár iú frâm brâ-zíl?' (p. 7)."
+    }
+  ],
+  "assessment_note": "Os gabaritos e controles de compreensão, transformação e diálogo desta edição para web foram CRIADOS agora. O PDF oferece um EXEMPLO de aula e textos/chunks; não contém estes gabaritos nem estado dos controles."
+}
