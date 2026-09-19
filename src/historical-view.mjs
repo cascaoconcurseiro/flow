@@ -80,7 +80,12 @@ export function mountHistoricalLesson(host,lesson,onBack){
    if(state.revealed[id]){const t=make("div",null,"study-translation");format(t,c.translation);article.append(t)}
   }
   if(c.hasOriginalControls)article.append(make("aside","Alguns seletores, diálogos e controles da conversa original ainda exigem conversão específica. O texto original está preservado abaixo para conferência; nenhum código importado é executado.","study-source-note"));
-  const original=make("details",null,"study-original");original.append(make("summary","Conferir fonte histórica desta seção"),make("pre",c.source,"study-source-code"));article.append(original);
+  const original=make("details",null,"study-original");
+  const sourceGated=c.questions.length>0&&!state.checked[id];
+  if(sourceGated)original.append(make("summary","Fonte histórica disponível depois da correção das questões"),make("p","Para manter a compreensão em inglês primeiro, confira o código e o gabarito da fonte somente depois de enviar suas respostas.","study-muted"));
+  else original.append(make("summary","Conferir fonte histórica desta seção"),make("pre",c.source,"study-source-code"));
+  if(sourceGated)original.addEventListener("toggle",()=>{if(original.open)original.open=false});
+  article.append(original);
   const foot=make("div",null,"study-bottom-nav");
   const prev=button("← Seção anterior",()=>navigate(state.chapter-1));prev.disabled=state.chapter===0;foot.append(prev);
   if(state.chapter<chapters.length-1)foot.append(button("Continuar →",()=>navigate(state.chapter+1),"btn primary"));
