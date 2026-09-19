@@ -1,0 +1,13 @@
+# Dados pessoais e arquivos originais de exportação: nunca publicar
+.private/
+conversations.json
+chat.html
+*.zip
+*.sqlite
+*.db
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+coverage/
