@@ -1,5 +1,8 @@
 # REAL ENGLISH — Grammar Through Chunks
 
+> **Para visualizar o curso com design e botões:** abrir um arquivo `.json`/`.md` no GitHub mostra o **código-fonte da aula**, não a página de estudo. No seu computador, execute `npm run dev` na pasta do projeto e abra `http://127.0.0.1:4173/` no navegador; escolha A1 → Parte 01 → **Abrir aula original**. O leitor renderiza capítulos, perguntas e alternativas. A aplicação ainda não foi publicada em uma URL hospedada.
+
+
 **Estado atual: protótipo de estudo + 48 partes históricas extraídas (A1: 6, A2: 9, B1: 33) + planejamento B2/C1. A reprodução integral dos controles originais ainda está em validação.**
 
 O repositório `cascaoconcurseiro/flow` continha somente `README.md` na `main` quando foi inspecionado. O código de um aplicativo anterior, caso exista em outro local, **não estava aqui**. Esta branch foi criada para dar ao Codex um ponto de partida executável, com navegação de A1 a C1, acesso separado à primeira aula demonstrativa A0 documentada no PDF e mecanismos de estudo reais.
