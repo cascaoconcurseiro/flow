@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0.0",
+  "id": "DEMO-B1-COMMUNICATION",
+  "related_curriculum_lesson_id": "B1-V3-P32",
+  "source_status": "technical_demo_not_original",
+  "title": "Demonstração técnica — esclarecer um problema",
+  "subtitle": "Exemplo funcional para testar tipos de atividade; não substitui a aula original B1 Parte 32.",
+  "level": "B1",
+  "objectives": [
+    "Explicar uma dificuldade observada sem inventar sua causa.",
+    "Pedir esclarecimento e distinguir informação relatada de informação confirmada."
+  ],
+  "reading": {
+    "id": "demo-reading",
+    "title": "A booking question",
+    "english": "Emma: Have you booked the hotel yet?\n\nDaniel: Not yet. I've narrowed it down to two options, but I haven't booked either one.\n\nEmma: Oh, I thought you said the booking was confirmed.\n\nDaniel: Sorry, I wasn't clear. What I meant was that I'd found two suitable hotels. I still need to check the total prices and booking conditions.\n\nEmma: Alex told me that early check-in was available when he stayed at the first hotel.\n\nDaniel: That's useful to know, but we haven't confirmed whether it's available for our dates. Could you help me look into it?\n\nEmma: Sure. Let's check the conditions and compare the options before we decide.",
+    "translation_pt_br": "Emma: Você já reservou o hotel?\n\nDaniel: Ainda não. Reduzi a duas opções, mas não reservei nenhuma.\n\nEmma: Ah, achei que você tinha dito que a reserva estava confirmada.\n\nDaniel: Desculpe, não fui claro. O que eu quis dizer é que tinha encontrado dois hotéis adequados. Ainda preciso conferir os preços totais e as condições de reserva.\n\nEmma: Alex me contou que havia check-in antecipado disponível quando ele se hospedou no primeiro hotel.\n\nDaniel: É útil saber disso, mas ainda não confirmamos se está disponível para nossas datas. Você poderia me ajudar a investigar?\n\nEmma: Claro. Vamos conferir as condições e comparar as opções antes de decidir.",
+    "translation_policy": "after_comprehension_submission",
+    "questions": [
+      {
+        "id": "r1",
+        "stem": "What has Daniel actually done?",
+        "options": [
+          {
+            "id": "a",
+            "text": "He has booked two hotels."
+          },
+          {
+            "id": "b",
+            "text": "He has reduced the options to two hotels, without booking either."
+          },
+          {
+            "id": "c",
+            "text": "He has received two booking confirmations."
+          }
+        ],
+        "correct_option_id": "b",
+        "explanation": "NARROWED IT DOWN indica uma lista menor; HAVEN'T BOOKED EITHER ONE nega a reserva."
+      },
+      {
+        "id": "r2",
+        "stem": "Why does Daniel apologize?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Emma understood that the reservation was confirmed."
+          },
+          {
+            "id": "b",
+            "text": "He has canceled the booking."
+          },
+          {
+            "id": "c",
+            "text": "The hotel sent the wrong price."
+          }
+        ],
+        "correct_option_id": "a",
+        "explanation": "Ele corrige a interpretação: encontrou opções, não concluiu uma reserva."
+      },
+      {
+        "id": "r3",
+        "stem": "What is confirmed about early check-in for this trip?",
+        "options": [
+          {
+            "id": "a",
+            "text": "It is guaranteed for their dates."
+          },
+          {
+            "id": "b",
+            "text": "It is always offered to guests."
+          },
+          {
+            "id": "c",
+            "text": "Nothing yet; Alex described an experience from another stay."
+          }
+        ],
+        "correct_option_id": "c",
+        "explanation": "Um relato de uma estadia anterior não confirma condições da reserva atual."
+      },
+      {
+        "id": "r4",
+        "stem": "What will they do before deciding?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Book both hotels."
+          },
+          {
+            "id": "b",
+            "text": "Check conditions and compare the options."
+          },
+          {
+            "id": "c",
+            "text": "Assume the lowest room price is the lowest total cost."
+          }
+        ],
+        "correct_option_id": "b",
+        "explanation": "CHECK e COMPARE indicam próximos passos, não decisão concluída."
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "id": "c1",
+      "front": "I'm having trouble finding my booking.",
+      "back_pt": "Estou tendo dificuldade para encontrar minha reserva.",
+      "function": "Descrever a dificuldade observada sem atribuir a causa.",
+      "usage": "I'm having trouble + -ING."
+    },
+    {
+      "id": "c2",
+      "front": "Could you clarify what you mean by 'confirmed'?",
+      "back_pt": "Você poderia esclarecer o que quer dizer com 'confirmado'?",
+      "function": "Pedir precisão sobre um termo ambíguo.",
+      "usage": "Could you clarify what you mean by + expressão?"
+    },
+    {
+      "id": "c3",
+      "front": "What I meant was that I'd chosen a hotel, not booked it.",
+      "back_pt": "O que eu quis dizer é que tinha escolhido um hotel, não que o havia reservado.",
+      "function": "Corrigir um mal-entendido com tato.",
+      "usage": "What I meant was that..."
+    },
+    {
+      "id": "c4",
+      "front": "I'll get back to you once I've checked the details.",
+      "back_pt": "Retornarei com uma resposta depois de conferir os detalhes.",
+      "function": "Combinar um retorno futuro, não afirmar que a checagem já ocorreu.",
+      "usage": "Get back to someone = responder depois."
+    }
+  ],
+  "explanation": [
+    {
+      "title": "Problema observado ≠ causa confirmada",
+      "body": "I'm having trouble finding my booking informa a dificuldade. Não significa, por si só, que o hotel cancelou a reserva."
+    },
+    {
+      "title": "Seleção ≠ reserva concluída",
+      "body": "I've narrowed it down to two options não equivale a I've booked one. Você precisa confirmar qual ação foi concluída."
+    },
+    {
+      "title": "Informação atribuída ≠ condição verificada",
+      "body": "Alex said it was available during his stay não garante que a condição se aplique à viagem atual."
+    }
+  ],
+  "dialogue": {
+    "id": "d1",
+    "title": "Confirm the status",
+    "turns": [
+      {
+        "id": "t1",
+        "speaker": "Emma",
+        "prompt": "So you've already booked Hotel A, right?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Not yet. I've chosen two options, but I haven't booked either one.",
+            "feedback": "Você distingue seleção de reserva concluída.",
+            "correct": true
+          },
+          {
+            "id": "o2",
+            "text": "Yes, it's booked because I chose it.",
+            "feedback": "Escolher uma opção não estabelece que a reserva foi concluída.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "speaker": "Emma",
+        "prompt": "Alex said we can check in early. Is that confirmed?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Alex said it was available during his stay, but we haven't checked our dates.",
+            "feedback": "Você atribui corretamente o relato anterior.",
+            "correct": true
+          },
+          {
+            "id": "o2",
+            "text": "Yes, Alex's experience guarantees it for us.",
+            "feedback": "A experiência anterior não confirma a condição da nova estadia.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "speaker": "Emma",
+        "prompt": "What should we do before deciding?",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Let's compare the total prices and conditions, then decide.",
+            "feedback": "Você estabelece um próximo passo verificável.",
+            "correct": true
+          },
+          {
+            "id": "o2",
+            "text": "Tell everyone the booking is already complete.",
+            "feedback": "A mensagem apresentaria como concluído algo que ainda é um plano.",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  "writing_tasks": [
+    {
+      "id": "w1",
+      "title": "Explique um problema",
+      "prompt": "Escreva de 4 a 6 frases em inglês: reserva não aparece no aplicativo; você conferiu o número; não sabe a causa; faça um pedido específico de verificação. Não invente cancelamento.",
+      "suggested_criteria": [
+        "contexto",
+        "dificuldade observada",
+        "tentativa já realizada",
+        "pedido específico",
+        "nenhuma causa inventada"
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Compare e esclareça",
+      "prompt": "Escreva uma mensagem de 80–120 palavras para um amigo: você escolheu dois hotéis, ainda não reservou nenhum, prefere o hotel perto da estação, precisa comparar os custos totais, e o early check-in relatado por Alex ainda não foi confirmado para suas datas.",
+      "suggested_criteria": [
+        "diferença entre escolha e reserva",
+        "comparação com critérios",
+        "informação de Alex atribuída",
+        "próximo passo",
+        "coesão"
+      ]
+    }
+  ],
+  "assessment_note": "Pontuação objetiva não representa nível CEFR certificado. Escrita livre fica salva localmente e requer análise humana ou integração futura consentida de IA."
+}
