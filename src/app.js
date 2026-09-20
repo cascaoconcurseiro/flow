@@ -1,15 +1,16 @@
 import {mountArchive} from "./archive-browser.mjs";
 import {renderHistoricalLessonView} from "./lesson-renderer.mjs";
-const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json",sourceIndex:"./data/recovered-source-index.json",masterPrompt:"./curriculum/prompt_mestre_professor_interativo.md"};
+const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json",sourceIndex:"./data/recovered-source-index.json",masterPrompt:"./curriculum/prompt_mestre_professor_interativo.md",masterSpec:"./curriculum/master_design_and_ux_spec.md"};
 const STORE_KEY="real-english-technical-demo-v1";
 const root=document.getElementById("view");
 const nav=document.getElementById("level-nav");
 const status=document.getElementById("announcements");
 document.getElementById("open-master-prompt")?.addEventListener("click",()=>{route="master-prompt";render();document.getElementById("main").focus()});
+document.getElementById("open-master-spec")?.addEventListener("click",()=>{route="master-spec";render();document.getElementById("main").focus()});
 document.getElementById("open-pdf-lesson").addEventListener("click",gotoPdfLesson);
 document.getElementById("open-pdf-plan").addEventListener("click",()=>{route="pdf-plan";render();document.getElementById("main").focus()});
 document.getElementById("open-private-archive").addEventListener("click",gotoArchive);
-let curriculum=null,demo=null,originalDemo=null,pdfLesson=null,pdfPlan=null,sourceIndex=null,currentHistoricalLesson=null,masterPromptText="",level="A1",route="catalog",cardIndex=0,activeStoreKey=STORE_KEY;
+let curriculum=null,demo=null,originalDemo=null,pdfLesson=null,pdfPlan=null,sourceIndex=null,currentHistoricalLesson=null,masterPromptText="",masterSpecText="",level="A1",route="catalog",cardIndex=0,activeStoreKey=STORE_KEY;
 const emptyProgress=()=>({answers:{},checked:false,translation:false,grades:{},cardBack:false,dialogueIndex:0,dialogueHistory:[],writing:{},checks:{},transformations:{},shownModels:{},explorerChoice:"problem",explorerTranslation:false});
 let progress=loadProgress();
 function loadProgress(){try{return {...emptyProgress(),...JSON.parse(localStorage.getItem(activeStoreKey)||"{}")}}catch{return emptyProgress()}}
@@ -40,7 +41,7 @@ async function openHistoricalLesson(sourcePath){
  }catch(e){announce(e.message)}
 }
 function renderNav(){nav.replaceChildren();for(const v of curriculum.volumes){const b=button(v.level,()=>gotoCatalog(v.level));b.setAttribute("aria-current",String(v.level===level));nav.append(b)}}
-function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="pdf-plan")renderPdfPlan();else if(route==="demo"||route==="pdf-lesson")renderDemo();else if(route==="historical-lesson")renderHistoricalLesson();else if(route==="master-prompt")renderMasterPrompt();else renderCatalog()}
+function render(){renderNav();root.replaceChildren();if(route==="archive")mountArchive(root,()=>gotoCatalog(level));else if(route==="pdf-plan")renderPdfPlan();else if(route==="demo"||route==="pdf-lesson")renderDemo();else if(route==="historical-lesson")renderHistoricalLesson();else if(route==="master-prompt")renderMasterPrompt();else if(route==="master-spec")renderMasterSpec();else renderCatalog()}
 function renderCatalog(){
 const v=curriculum.volumes.find(x=>x.level===level);const overview=panel(level+" · "+v.title);
 const count=v.planned_lesson_count===null?"Quantidade original ainda não recuperada":v.planned_lesson_count+" posições no catálogo";
@@ -180,4 +181,13 @@ function renderMasterPrompt(){
  p.append(toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(level),"btn primary")));
  root.append(p);
 }
-(async()=>{try{const [c,l,p,s,idx,pr]=await Promise.all([fetch(PATHS.curriculum),fetch(PATHS.demo),fetch(PATHS.pdfLesson),fetch(PATHS.pdfPlan),fetch(PATHS.sourceIndex),fetch(PATHS.masterPrompt)]);if(!c.ok||!l.ok||!p.ok||!s.ok||!idx.ok||!pr.ok)throw new Error("Falha ao carregar os arquivos JSON");curriculum=await c.json();originalDemo=await l.json();pdfLesson=await p.json();pdfPlan=await s.json();sourceIndex=await idx.json();masterPromptText=await pr.text();demo=originalDemo;render()}catch(e){root.replaceChildren(add(panel("Não foi possível carregar o curso"),para(e.message),para("Sirva a pasta por um servidor local (por exemplo: npm run dev). Abrir index.html diretamente como arquivo pode bloquear a leitura dos JSON.")))}})();
+function renderMasterSpec(){
+ const p=panel("REAL ENGLISH — Especificação Mestre de Design, UX e Funcionamento");
+ p.append(pill("DOCUMENTO MESTRE · A1–C1","good"),toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(level))));
+ p.append(para("Esta especificação estabelece os design tokens, as regras de UX, os componentes obrigatórios e o contrato de estados para apresentar as aulas do A1 ao C1 com fidelidade.","notice"));
+ const pre=node("pre",masterSpecText||"Carregando especificação…","archive-pre reading");
+ p.append(pre);
+ p.append(toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(level),"btn primary")));
+ root.append(p);
+}
+(async()=>{try{const [c,l,p,s,idx,pr,sp]=await Promise.all([fetch(PATHS.curriculum),fetch(PATHS.demo),fetch(PATHS.pdfLesson),fetch(PATHS.pdfPlan),fetch(PATHS.sourceIndex),fetch(PATHS.masterPrompt),fetch(PATHS.masterSpec)]);if(!c.ok||!l.ok||!p.ok||!s.ok||!idx.ok||!pr.ok||!sp.ok)throw new Error("Falha ao carregar os arquivos JSON");curriculum=await c.json();originalDemo=await l.json();pdfLesson=await p.json();pdfPlan=await s.json();sourceIndex=await idx.json();masterPromptText=await pr.text();masterSpecText=await sp.text();demo=originalDemo;render()}catch(e){root.replaceChildren(add(panel("Não foi possível carregar o curso"),para(e.message),para("Sirva a pasta por um servidor local (por exemplo: npm run dev). Abrir index.html diretamente como arquivo pode bloquear a leitura dos JSON.")))}})();
