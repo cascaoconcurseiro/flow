@@ -1,0 +1,52 @@
+name: Build REAL ENGLISH offline and Codex package
+on:
+  push:
+    branches:
+      - feat/real-english-curriculum-spec
+    paths:
+      - 'src/**'
+      - 'data/**'
+      - 'curriculum/**'
+      - 'scripts/build-offline.mjs'
+      - 'index.html'
+      - 'package.json'
+      - '.github/workflows/offline-package.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout current source
+        uses: actions/checkout@v4
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run existing data and parser tests
+        run: npm test
+      - name: Install pinned temporary browser bundler
+        run: npm install --no-save --package-lock=false esbuild@0.25.9
+      - name: Bundle full app without dynamic imports
+        run: npx --no-install esbuild src/app.js --bundle --format=iife --platform=browser --target=es2022 --outfile=dist/app.bundle.js
+      - name: Build standalone HTML and integrity manifest
+        run: node scripts/build-offline.mjs
+      - name: Ensure all source lessons are present and offline document has no external imports
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; const h=fs.readFileSync('dist/offline/REAL_ENGLISH_OFFLINE.html','utf8'); if(!h.includes('id=\"offline-resources\"')||!h.includes('real-english-study-v2-')||h.includes('src=\"./src/app.js\"')||h.includes('href=\"./src/styles.css\"')) process.exit(1); console.log('PASS: standalone HTML embeds source, script, CSS and lessons');"
+      - name: Prepare downloadable ZIP content
+        run: |
+          mkdir -p dist/package/PROJETO_CODEX
+          cp -a dist/offline/. dist/package/
+          git archive HEAD | tar -x -C dist/package/PROJETO_CODEX
+          printf '%s\n' 'Este pacote contém 48 partes históricas recuperadas (A1: 6, A2: 9, B1: 33), planos B2/C1 (40+40), HTML offline e projeto-fonte.' 'Os planejamentos B2/C1 não representam aulas redigidas. Algumas interações históricas ainda exigem conversão individual.' 'Para estudar: abra REAL_ENGLISH_OFFLINE.html. Para desenvolver: abra a pasta PROJETO_CODEX no Codex.' > dist/package/INICIO.txt
+      - name: Upload single downloadable study and Codex package
+        uses: actions/upload-artifact@v4
+        with:
+          name: REAL_ENGLISH_OFFLINE_E_CODEX
+          path: dist/package/
+          compression-level: 6
+          retention-days: 30
+          if-no-files-found: error
