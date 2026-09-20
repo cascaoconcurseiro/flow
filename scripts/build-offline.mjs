@@ -47,8 +47,9 @@ const shim=[
  "};",
  "})();"
 ].join("\n");
-// Use callback replacements: passing the JS bundle as a replacement string
-// expands its literal const standalone=html.replace(styleTag,()=>"<style>\n"+css+"\n</style>")
+// Use callback replacements so JavaScript replacement tokens remain literal.
+// Place the bundled app after body controls exist, rather than in the head.
+const standalone=html.replace(styleTag,()=>"<style>\n"+css+"\n</style>")
  .replace(scriptTag,()=>'<script type="application/json" id="offline-resources">'+data+'</script>\n<script>'+shim+'</script>')
  .replace('</body>',()=>'<script>'+js+'</script>\n</body>');
 if(standalone.includes(scriptTag))throw Error("Offline HTML still contains external script tag.");
