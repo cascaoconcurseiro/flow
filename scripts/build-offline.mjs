@@ -47,8 +47,14 @@ const shim=[
  "};",
  "})();"
 ].join("\n");
-const standalone=html.replace(styleTag,"<style>\n"+css+"\n</style>")
- .replace(scriptTag,'<script type="application/json" id="offline-resources">'+data+'</script>\n<script>'+shim+'</script>\n<script>'+js+'</script>');
+// Use callback replacements: passing the JS bundle as a replacement string
+// expands its literal const standalone=html.replace(styleTag,"<style>\n"+css+"\n</style>")
+ .replace(scriptTag,'<script type="application/json" id="offline-resources">'+data+'</script>\n<script>'+shim+'</script>\n<script>'+js+'</script>'); sequences into the original <script> tag and breaks HTML.
+// Run the app after the body exists, not synchronously in <head>.
+const standalone=html.replace(styleTag,()=>"<style>\n"+css+"\n</style>")
+ .replace(scriptTag,()=>'<script type="application/json" id="offline-resources">'+data+'</script>\n<script>'+shim+'</script>')
+ .replace('</body>',()=>'<script>'+js+'</script>\n</body>');
+if(standalone.includes(scriptTag))throw Error("Offline HTML still contains the external module script; do not release.");
 fs.mkdirSync("dist/offline",{recursive:true});
 fs.writeFileSync("dist/offline/REAL_ENGLISH_OFFLINE.html",standalone,"utf8");
 fs.writeFileSync("dist/offline/MANIFESTO_DE_INTEGRIDADE.json",JSON.stringify({
