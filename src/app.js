@@ -1,3 +1,4 @@
+import {mountHistoricalLesson} from "./historical-view.mjs";
 import {mountArchive} from "./archive-browser.mjs";
 const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json",sourceIndex:"./data/recovered-source-index.json",masterPrompt:"./curriculum/prompt_mestre_professor_interativo.md"};
 const STORE_KEY="real-english-technical-demo-v1";
@@ -32,6 +33,7 @@ async function openHistoricalLesson(sourcePath){
   const res=await fetch(sourcePath);
   if(!res.ok)throw new Error("Não foi possível carregar a aula selecionada");
   currentHistoricalLesson=await res.json();
+  try{localStorage.setItem("real-english-last-lesson-v1",JSON.stringify({source:sourcePath,id:currentHistoricalLesson.id,level:currentHistoricalLesson.level,title:currentHistoricalLesson.title}))}catch{}
   route="historical-lesson";
   render();
   document.getElementById("main").focus();
@@ -46,6 +48,17 @@ const count=v.planned_lesson_count===null?"Quantidade original ainda não recupe
 overview.append(pill(count),para(v.notes,"muted"));
 if(level==="B1")overview.append(add(node("div",null,"notice"),node("strong","Demonstração técnica disponível"),para("A demonstração abaixo exercita perguntas, tradução revelável, cards, diálogos e escrita. Não é a aula integral original."),button("Abrir aula-piloto funcional",gotoDemo,"btn primary")));
 root.append(overview);
+try{
+ const last=JSON.parse(localStorage.getItem("real-english-last-lesson-v1")||"null");
+ if(last&&last.level===level&&typeof last.source==="string"&&/^data\/lessons\/[a-z0-9/-]+\.json$/.test(last.source)){
+  const saved=JSON.parse(localStorage.getItem("real-english-study-v2-"+last.id)||"{}");
+  const card=panel("Continue de onde parou");
+  card.append(pill(saved.completed?"Leitura percorrida":"Em andamento",saved.completed?"good":"warning"),para(last.title,"status"),
+    para(saved.completed?"A leitura foi percorrida; as tarefas abertas e as interações ainda podem precisar de correção.":"Retome o capítulo em que parou. Sua posição e as respostas marcadas permanecem salvas neste navegador.","muted"));
+  card.append(button("Continuar esta aula →",()=>openHistoricalLesson(last.source),"btn primary"));
+  root.append(card);
+ }
+}catch{}
 renderRecoveredSources();
 if(!v.modules.length&&!v.lesson_records.length){root.append(add(panel("Fontes históricas pendentes"),para("Este nível ainda precisa de extração integral das conversas do curso. Não foram inventados títulos ou conteúdos para preencher as lacunas.")));return}
 if(v.lesson_records.length){const p=panel("Aulas catalogadas");for(const l of v.lesson_records){const row=node("div",null,"lesson-row");const left=node("div");left.append(node("strong",String(l.number).padStart(2,"0")+" · "+(l.title||"Título original ainda não recuperado")),para(l.status.replaceAll("_"," "),"muted"));row.append(left);const actions=node("div");if(l.source&&l.source!=="not_available"){actions.append(button("Abrir aula original",()=>openHistoricalLesson(l.source),"btn small primary"))}if(l.number===32&&level==="B1"){actions.append(button("Testar componentes",gotoDemo,"btn small secondary"))}else if(!l.source||l.source==="not_available"){actions.append(pill("Acervo original pendente","warning"))}row.append(actions);p.append(row)}root.append(p)}
@@ -168,21 +181,7 @@ p.append(para(route==="pdf-lesson"?"O PDF apresenta esta Aula 01 como exemplo in
 p.append(button("Reiniciar somente o progresso desta aula",()=>{if(confirm("Apagar respostas e avaliações locais apenas desta aula?")){progress=emptyProgress();cardIndex=0;save();render()}},"btn small"));root.append(p)}
 function renderHistoricalLesson(){
  if(!currentHistoricalLesson)return gotoCatalog(level);
- const l=currentHistoricalLesson;
- const heading=panel(l.level+" · Parte "+String(l.part).padStart(2,"0")+" — "+l.title);
- heading.append(pill("ORIGINAL HISTÓRICO · TURNO "+l.turn_ordinal,"good"),pill((Math.round(l.character_count/1000))+"k caracteres"),toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(l.level))));
- root.append(heading);
- if(l.user_prompt){
-  const promptBox=panel("Comando histórico na conversa");
-  promptBox.append(para(l.user_prompt,"muted subtle"));
-  root.append(promptBox);
- }
- const bodyBox=panel("Conteúdo da Aula");
- bodyBox.append(para("Esta aula foi transcrita literalmente da conversa histórica do REAL ENGLISH. Leia o conteúdo original com seus contrastes, regras, diálogos e flashcards.","notice"));
- const pre=node("pre",l.raw_markdown,"archive-pre reading");
- bodyBox.append(pre);
- bodyBox.append(toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(l.level),"btn primary")));
- root.append(bodyBox);
+ mountHistoricalLesson(root,currentHistoricalLesson,()=>gotoCatalog(currentHistoricalLesson.level));
 }
 function renderMasterPrompt(){
  const p=panel("Prompt Mestre de Autoria — Professor Interativo");
