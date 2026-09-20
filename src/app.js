@@ -1,4 +1,5 @@
 import {mountArchive} from "./archive-browser.mjs";
+import {renderHistoricalLessonView} from "./lesson-renderer.mjs";
 const PATHS={curriculum:"./curriculum/real_english_curriculum.json",demo:"./data/demo-lesson.json",pdfLesson:"./data/pdf-a0-aula-01.json",pdfPlan:"./data/pdf-initial-curriculum.json",sourceIndex:"./data/recovered-source-index.json",masterPrompt:"./curriculum/prompt_mestre_professor_interativo.md"};
 const STORE_KEY="real-english-technical-demo-v1";
 const root=document.getElementById("view");
@@ -168,21 +169,7 @@ p.append(para(route==="pdf-lesson"?"O PDF apresenta esta Aula 01 como exemplo in
 p.append(button("Reiniciar somente o progresso desta aula",()=>{if(confirm("Apagar respostas e avaliações locais apenas desta aula?")){progress=emptyProgress();cardIndex=0;save();render()}},"btn small"));root.append(p)}
 function renderHistoricalLesson(){
  if(!currentHistoricalLesson)return gotoCatalog(level);
- const l=currentHistoricalLesson;
- const heading=panel(l.level+" · Parte "+String(l.part).padStart(2,"0")+" — "+l.title);
- heading.append(pill("ORIGINAL HISTÓRICO · TURNO "+l.turn_ordinal,"good"),pill((Math.round(l.character_count/1000))+"k caracteres"),toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(l.level))));
- root.append(heading);
- if(l.user_prompt){
-  const promptBox=panel("Comando histórico na conversa");
-  promptBox.append(para(l.user_prompt,"muted subtle"));
-  root.append(promptBox);
- }
- const bodyBox=panel("Conteúdo da Aula");
- bodyBox.append(para("Esta aula foi transcrita literalmente da conversa histórica do REAL ENGLISH. Leia o conteúdo original com seus contrastes, regras, diálogos e flashcards.","notice"));
- const pre=node("pre",l.raw_markdown,"archive-pre reading");
- bodyBox.append(pre);
- bodyBox.append(toolbar(button("← Voltar ao catálogo",()=>gotoCatalog(l.level),"btn primary")));
- root.append(bodyBox);
+ renderHistoricalLessonView(root, currentHistoricalLesson, () => gotoCatalog(currentHistoricalLesson.level));
 }
 function renderMasterPrompt(){
  const p=panel("Prompt Mestre de Autoria — Professor Interativo");

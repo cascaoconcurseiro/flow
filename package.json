@@ -8,7 +8,7 @@
     "dev": "node scripts/dev-server.mjs",
     "extract:lessons": "node scripts/extract-historical-lessons.mjs",
     "build:source-package": "node scripts/build-course-source-package.mjs",
-    "test": "node scripts/validate-data.mjs && node --check src/app.js && node --check src/archive-browser.mjs && node --check src/archive-core.mjs && node --check src/source-package-core.mjs && node --check scripts/extract-historical-lessons.mjs && node --check scripts/build-course-source-package.mjs && node --check scripts/index-private-archive.mjs && node --check scripts/dev-server.mjs && node --check scripts/import-chatgpt-export.mjs && node --test tests/*.test.mjs",
+    "test": "node scripts/validate-data.mjs && node --check src/app.js && node --check src/lesson-renderer.mjs && node --check src/archive-browser.mjs && node --check src/archive-core.mjs && node --check src/source-package-core.mjs && node --check scripts/extract-historical-lessons.mjs && node --check scripts/build-course-source-package.mjs && node --check scripts/index-private-archive.mjs && node --check scripts/dev-server.mjs && node --check scripts/import-chatgpt-export.mjs && node --test tests/*.test.mjs",
     "audit": "node scripts/validate-data.mjs"
   },
   "engines": {
